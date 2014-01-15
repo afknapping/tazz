@@ -1,0 +1,22 @@
+{
+  "name": "protostack",
+  "version": "0.0.0",
+  "authors": [
+    "filtercake <fabian@superpursuitmo.de>"
+  ],
+  "description": "prototyping stack",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.8",
+    "longest": "*",
+    "mrmrs-colors": "*"
+  }
+}
