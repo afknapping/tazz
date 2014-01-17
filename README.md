@@ -5,7 +5,7 @@ A prototyping stack for designers.
 
 ## Goal
 
-The goal is to have a complete frontend first stack to quickly prototype, deploy and test apps. Ideally it can be started with three commands (clone, install dependencies, start server).
+The goal is to have a complete frontend first stack to quickly prototype, deploy and test apps. Ideally it can be started with three commands (clone, install dependencies, start server). (Respectively install Yo, run generator, start server.)
 
 ## Tools so far
 
@@ -13,7 +13,14 @@ The goal is to have a complete frontend first stack to quickly prototype, deploy
 
 ## Missing or still-to-be-evaluated
 
+Yeoman - Yo, Grunt(-CLI), Bower.
+
 [Hoodie](http://hood.ie/), [Yeoman](http://yeoman.io/), [Jade](http://jade-lang.com/), [Stylus](http://learnboost.github.io/stylus/), [RequireJS](http://www.requirejs.org/), [gulp.js](http://gulpjs.com/), [Grunt](http://gruntjs.com/), [Compass](http://compass-style.org/).
+
+### Testing
+
+[PhantomCSS](https://github.com/Huddle/PhantomCSS) for [CasperJS](http://casperjs.org/) for [PhantomJS](http://phantomjs.org/).
+
 
 ## Nogos
 
