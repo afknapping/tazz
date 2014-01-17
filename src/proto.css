@@ -1,4 +1,38 @@
-/* line 4, proto.sass */
+/* PRETTIER LINKS */
+/* line 3, ../bower_components/mrmrs-colors/sass/_links.scss */
+a {
+  text-decoration: none;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+/* line 9, ../bower_components/mrmrs-colors/sass/_links.scss */
+a:link {
+  color: #0074d9;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+/* line 15, ../bower_components/mrmrs-colors/sass/_links.scss */
+a:visited {
+  color: #b10dc9;
+}
+
+/* line 19, ../bower_components/mrmrs-colors/sass/_links.scss */
+a:hover {
+  color: #7fdbff;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+/* line 25, ../bower_components/mrmrs-colors/sass/_links.scss */
+a:active {
+  color: #ff851b;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+/* line 5, proto.sass */
 body {
   background-color: #01ff70;
 }
