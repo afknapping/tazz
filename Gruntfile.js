@@ -4,16 +4,23 @@ module.exports = function(grunt){
 
 		pkg: grunt.file.readJSON('package.json'),
 		
-		uglify: {
-			options: {
-				banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */ \n'
-			},
-			build: {
-				src: 'src/<%= pkg.name %>.min.js',
-				dest: 'build/<%= pkg.name %>.min.js'
-			}
-		},
-		
+
+    express: {
+        options: {
+          // debug: true,
+        },
+        dev: {
+          options: {
+            script: 'server.js'
+          }
+        },
+        test: {
+          options: {
+            script: 'path/to/test/server.js'
+          }
+        }
+    },
+
 		watch: {
       options: {
         livereload: true,  
@@ -33,15 +40,10 @@ module.exports = function(grunt){
         files: 'src/*.sass',
         tasks: ['sass'],
       },
-      // reload: {
-      //   files: ['**/*.html', '**/*.js', '**/*.css', '**/*.{png,jpg}'],
-      //   tasks: 'tinylr-reload'
-      // }
       reload: {
         files: ['src/*.html', 'src/*.js', 'src/*.css', 'src/*.{png,jpg}'],
         tasks: 'tinylr-reload'
-      }
-
+      },
 		},
 
     sass: {
@@ -61,15 +63,18 @@ module.exports = function(grunt){
 
 	// grunt.loadNpmTasks('grunt-contrib-uglify');
 	
-	// grunt.registerTask('default', ['uglify']);
+	// grunt.registerTask('default', ['express:dev', 'watch']);
+
 
 	grunt.registerTask('log', 'Log some stuff.', function () {
 		grunt.log.write('Logging some stuff...').ok();
 	});
 
   grunt.registerTask('reload', ['tinylr-start', 'watch']);
+  grunt.registerTask('server', [ 'express:dev', 'watch' ])
 	
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('tiny-lr');
+  grunt.loadNpmTasks('grunt-express-server');
 };

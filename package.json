@@ -6,6 +6,8 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-sass": "~0.6.0",
-    "tiny-lr": "0.0.5"
+    "tiny-lr": "0.0.5",
+    "grunt-express-server": "~0.4.11",
+    "express": "~3.4.8"
   }
 }
