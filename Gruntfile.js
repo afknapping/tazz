@@ -1,33 +1,36 @@
 module.exports = function(grunt){
-	
-	grunt.initConfig({
+  
+  grunt.initConfig({
 
-		pkg: grunt.file.readJSON('package.json'),
-		
+    pkg: grunt.file.readJSON('package.json'),
 
-    express: {
+    concurrent: {
+        watch_serve_reload: ['server', 'watch'],
         options: {
-          // debug: true,
-        },
-        dev: {
-          options: {
-            script: 'server.js'
-          }
-        },
-        test: {
-          options: {
-            script: 'path/to/test/server.js'
-          }
-        }
+                logConcurrentOutput: true
+            }
     },
 
-		watch: {
+    connect: {
+      server: {
+        options: {
+          port: 3000,
+          base: 'src'
+        }
+      }
+    },
+
+    watch: {
       options: {
         livereload: true,  
       },
+      jade: {
+        files: ['src/*.jade'],
+        tasks: ['jade'],
+      },
       html: {
         files: ['src/*.html'],
-        task: ['log'],
+        tasks: ['log'],
       },
       scripts: {
         files: [ 'src/*.js'],
@@ -44,7 +47,7 @@ module.exports = function(grunt){
         files: ['src/*.html', 'src/*.js', 'src/*.css', 'src/*.{png,jpg}'],
         tasks: 'tinylr-reload'
       },
-		},
+    },
 
     sass: {
       dist: {
@@ -58,23 +61,46 @@ module.exports = function(grunt){
         }
 
       }
+    },
+
+    jade: {
+      compile: {
+        options: {
+          data: {
+            debug: false
+          }
+        },
+        files: [ {
+          expand: true,
+          src: "src/*.jade",
+          // dest: "src/",
+          ext: ".html",
+          // cwd: "src/"
+          // "src/hellojade.html": ["src/hellojade.jade"]
+        } ]
+      }
     }
-	});
 
-	// grunt.loadNpmTasks('grunt-contrib-uglify');
-	
-	// grunt.registerTask('default', ['express:dev', 'watch']);
+  });
+
+  // grunt.loadNpmTasks('grunt-contrib-uglify');
+  
+  // grunt.registerTask('default', ['express:dev', 'watch']);
 
 
-	grunt.registerTask('log', 'Log some stuff.', function () {
-		grunt.log.write('Logging some stuff...').ok();
-	});
+  grunt.registerTask('log', 'Log some stuff.', function () {
+    grunt.log.write('Logging some stuff...').ok();
+  });
 
-  grunt.registerTask('reload', ['tinylr-start', 'watch']);
-  grunt.registerTask('server', [ 'express:dev', 'watch' ])
-	
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-sass');
+  // grunt.registerTask('reload', ['tinylr-start', 'watch']);
+  // grunt.registerTask('server', [ 'watch', 'connect:keepalive' ])
+  grunt.registerTask('server', [ 'connect:server:keepalive' ]);
+  grunt.registerTask('default', [ 'concurrent:watch_serve_reload' ]);
+  
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('tiny-lr');
-  grunt.loadNpmTasks('grunt-express-server');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-contrib-jade');
 };
