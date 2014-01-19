@@ -72,15 +72,11 @@ module.exports = function(grunt){
         },
         files: [ {
           expand: true,
-          src: "src/*.jade",
-          // dest: "src/",
-          ext: ".html",
-          // cwd: "src/"
-          // "src/hellojade.html": ["src/hellojade.jade"]
+          src: 'src/*.jade',
+          ext: '.html',
         } ]
       }
-    }
-
+    },
   });
 
   // grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -94,8 +90,9 @@ module.exports = function(grunt){
 
   // grunt.registerTask('reload', ['tinylr-start', 'watch']);
   // grunt.registerTask('server', [ 'watch', 'connect:keepalive' ])
+  grunt.registerTask('inital_compile', [ 'sass', 'jade' ]);
   grunt.registerTask('server', [ 'connect:server:keepalive' ]);
-  grunt.registerTask('default', [ 'concurrent:watch_serve_reload' ]);
+  grunt.registerTask('default', [ 'inital_compile', 'concurrent:watch_serve_reload' ]);
   
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
