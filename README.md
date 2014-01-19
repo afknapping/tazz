@@ -10,7 +10,7 @@ Goal: deployable zero-configuration prototyping stack for designers.
 - √ Coffeescript
 - √ copy plain js files to build
 - √ JSHint
-- CSSHint
+- X CSSLint
 - CouchDB
 - Config / Meta .json
 - √ Require
