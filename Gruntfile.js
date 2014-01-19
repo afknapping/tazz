@@ -36,6 +36,10 @@ module.exports = function(grunt){
         //   spawn: false,
         // },
       },
+      coffee: {
+        files: [ 'src/**/*.coffee' ],
+        tasks: [ 'coffee' ],
+      },
       css: {
         files: 'src/**/*.sass',
         tasks: ['sass'],
@@ -94,7 +98,7 @@ module.exports = function(grunt){
       js: {
         expand: true,
         cwd: 'src/assets/javascripts',
-        src: '**',
+        src: '**/*.js',
         dest: 'build/',
         flatten: true,
         filter: 'isFile',
@@ -103,12 +107,24 @@ module.exports = function(grunt){
     jshint: {
       all: [ 'Gruntfile.js', 'src/**/*.js' ]
     },
+
+    coffee: {
+      glob_to_multiple: {
+        expand: true,
+        flatten: true,
+        cwd: 'src/assets/javascripts',
+        src: ['**/*.coffee'],
+        dest: 'build',
+        ext: '.js',
+      },
+  },
+
   });
 
   grunt.registerTask('log', 'Log some stuff.', function () {
     grunt.log.write('Logging some stuff...').ok();
   });
-  grunt.registerTask('inital_compile', [ 'sass', 'jade', 'copy' ]);
+  grunt.registerTask('inital_compile', [ 'sass', 'jade', 'coffee', 'copy' ]);
   grunt.registerTask('server', [ 'connect:server:keepalive' ]);
   grunt.registerTask('default', [ 'inital_compile', 'concurrent:watch_serve_reload' ]);
   
@@ -120,4 +136,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
 };
