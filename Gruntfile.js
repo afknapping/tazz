@@ -15,7 +15,7 @@ module.exports = function(grunt){
       server: {
         options: {
           port: 3000,
-          base: 'src'
+          base: 'build'
         }
       }
     },
@@ -25,26 +25,26 @@ module.exports = function(grunt){
         livereload: true,  
       },
       jade: {
-        files: ['src/*.jade'],
+        files: ['src/**/*.jade'],
         tasks: ['jade'],
       },
       html: {
-        files: ['src/*.html'],
+        files: ['src/**/*.html'],
         tasks: ['log'],
       },
       scripts: {
-        files: [ 'src/*.js'],
-        tasks: ['jshint'],
-        options: {
-          spawn: false,
-        },
+        files: [ 'src/**/*.js'],
+        tasks: ['jshint', 'copy'],
+        // options: {
+        //   spawn: false,
+        // },
       },
       css: {
-        files: 'src/*.sass',
+        files: 'src/**/*.sass',
         tasks: ['sass'],
       },
       reload: {
-        files: ['src/*.html', 'src/*.js', 'src/*.css', 'src/*.{png,jpg}'],
+        files: ['src/**/*.html', 'src/**/*.js', 'src/**/*.css', 'src/**/*.{png,jpg}'],
         tasks: 'tinylr-reload'
       },
     },
@@ -56,9 +56,16 @@ module.exports = function(grunt){
                 lineNumbers: true,
                 compass: true,
         },
-        files: {
-          'src/proto.css': 'src/proto.sass'
-        }
+        files: [{
+          expand: true,
+          cwd: 'src/assets/stylesheets',
+          src: ['*.sass'],
+          dest: 'build',
+          ext: '.css'
+        }],
+        // files: {
+        //   'src/proto.css': 'src/proto.sass'
+        // }
 
       }
     },
@@ -79,6 +86,22 @@ module.exports = function(grunt){
         } ]
       }
     },
+
+    copy: {
+      main: {
+        expand: true,
+        cwd: 'src/assets/javascripts',
+        src: '**',
+        dest: 'build/',
+        flatten: true,
+        filter: 'isFile',
+      },
+    },
+
+    jshint: {
+      all: [ 'Gruntfile.js', 'src/**/*.js' ]
+    },
+
   });
 
   // grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -92,7 +115,7 @@ module.exports = function(grunt){
 
   // grunt.registerTask('reload', ['tinylr-start', 'watch']);
   // grunt.registerTask('server', [ 'watch', 'connect:keepalive' ])
-  grunt.registerTask('inital_compile', [ 'sass', 'jade' ]);
+  grunt.registerTask('inital_compile', [ 'sass', 'jade', 'copy' ]);
   grunt.registerTask('server', [ 'connect:server:keepalive' ]);
   grunt.registerTask('default', [ 'inital_compile', 'concurrent:watch_serve_reload' ]);
   
@@ -102,4 +125,6 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 };
