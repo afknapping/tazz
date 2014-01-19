@@ -7,17 +7,17 @@ Goal: deployable zero-configuration prototyping stack for designers.
 
 - √ Sass
 - √ Jade
-- Coffeescript
+- √ Coffeescript
 - √ copy plain js files to build
 - √ JSHint
 - CSSHint
 - CouchDB
-- Config / Mata .json
+- Config / Meta .json
 - √ Require
 - √ Bower
 - √ Angular Lib
 - √ mrsmr colors
-- clean app.js called from index.js
+- √ clean app.js called from index.js
 - Angular example / default controller and init
 
 
