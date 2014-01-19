@@ -86,13 +86,12 @@ module.exports = function(grunt){
       }
     },
     copy: {
-      require: {
-        src: 'bower_components/requirejs/require.js',
-        dest: 'build/require.js',
-      },
-      angular: {
-        src: 'bower_components/angular/angular.min.js',
-        dest: 'build/angular.min.js',
+
+      bower_components: {
+        expand: true,
+        cwd: 'bower_components',
+        dest: 'build/bower_components',
+        src: '**/*',
       },
 
       js: {
