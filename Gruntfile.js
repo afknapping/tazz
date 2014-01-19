@@ -1,7 +1,6 @@
 module.exports = function(grunt){
   
   grunt.initConfig({
-
     pkg: grunt.file.readJSON('package.json'),
 
     concurrent: {
@@ -10,7 +9,6 @@ module.exports = function(grunt){
                 logConcurrentOutput: true
             }
     },
-
     connect: {
       server: {
         options: {
@@ -19,7 +17,6 @@ module.exports = function(grunt){
         }
       }
     },
-
     watch: {
       options: {
         livereload: true,  
@@ -34,7 +31,7 @@ module.exports = function(grunt){
       },
       scripts: {
         files: [ 'src/**/*.js'],
-        tasks: ['jshint', 'copy'],
+        tasks: ['jshint', 'copy:js'],
         // options: {
         //   spawn: false,
         // },
@@ -48,7 +45,6 @@ module.exports = function(grunt){
         tasks: 'tinylr-reload'
       },
     },
-
     sass: {
       dist: {
         options: {
@@ -69,7 +65,6 @@ module.exports = function(grunt){
 
       }
     },
-
     jade: {
       compile: {
         options: {
@@ -86,9 +81,17 @@ module.exports = function(grunt){
         } ]
       }
     },
-
     copy: {
-      main: {
+      require: {
+        src: 'bower_components/requirejs/require.js',
+        dest: 'build/require.js',
+      },
+      angular: {
+        src: 'bower_components/angular/angular.min.js',
+        dest: 'build/angular.min.js',
+      },
+
+      js: {
         expand: true,
         cwd: 'src/assets/javascripts',
         src: '**',
@@ -97,24 +100,14 @@ module.exports = function(grunt){
         filter: 'isFile',
       },
     },
-
     jshint: {
       all: [ 'Gruntfile.js', 'src/**/*.js' ]
     },
-
   });
-
-  // grunt.loadNpmTasks('grunt-contrib-uglify');
-  
-  // grunt.registerTask('default', ['express:dev', 'watch']);
-
 
   grunt.registerTask('log', 'Log some stuff.', function () {
     grunt.log.write('Logging some stuff...').ok();
   });
-
-  // grunt.registerTask('reload', ['tinylr-start', 'watch']);
-  // grunt.registerTask('server', [ 'watch', 'connect:keepalive' ])
   grunt.registerTask('inital_compile', [ 'sass', 'jade', 'copy' ]);
   grunt.registerTask('server', [ 'connect:server:keepalive' ]);
   grunt.registerTask('default', [ 'inital_compile', 'concurrent:watch_serve_reload' ]);

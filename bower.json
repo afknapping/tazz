@@ -17,6 +17,7 @@
   "dependencies": {
     "angular": "~1.2.8",
     "longest": "*",
-    "mrmrs-colors": "*"
+    "mrmrs-colors": "*",
+    "requirejs": "~2.1.10"
   }
 }
