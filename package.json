@@ -1,6 +1,10 @@
 {
   "name": "stemcell",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/filtercake/stemcell.git"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-watch": "~0.5.3",
@@ -11,6 +15,6 @@
     "grunt-contrib-jade": "~0.9.1",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-coffee": "~0.8.2",
-    "tiny-lr": "~0.0.5",
+    "tiny-lr": "~0.0.5"
   }
 }
