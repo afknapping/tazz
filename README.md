@@ -2,7 +2,6 @@
 
 Goal: deployable zero-configuration prototyping stack for designers.
 
-
 ## Features:
 
 ### Todo:
@@ -11,14 +10,23 @@ Goal: deployable zero-configuration prototyping stack for designers.
 - [Font Awesome](http://fontawesome.io/) / [❍ IcoMoon](http://icomoon.io/)
 - ? [normalize](http://necolas.github.io/normalize.css/)
 - typography basics (maybe [Typeplate](http://typeplate.com/)?)
+    - fontstack
 - basic layout defaults (margins, paddings)
 - basic interface elements
     - ? [necolas/css3-github-buttons](https://github.com/necolas/css3-github-buttons)
 - foldout footer with design guide: colors, elements, styles, etc...
 - Config / Meta .json
-- [CouchDB](https://couchdb.apache.org/)
+- LocalStorage
+    - import/export json
 - run on [Hoodie](http://hood.ie/) / as hoodie plugin?
-- markdown support
+- [CouchDB](https://couchdb.apache.org/)
+    - ? default (admin) user
+- markdown support (for what?)
+- content (i18n?)
+- testing: unit, integration, design regression
+- onboarding defaults
+- inline usertesting
+
 
 ### Done
 
