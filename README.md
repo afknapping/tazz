@@ -2,9 +2,18 @@
 
 Goal: deployable zero-configuration prototyping stack for designers.
 
-## Features:
+## Use
 
-### Todo:
+Needs node.
+
+    $ git clone git@github.com:filtercake/stemcell.git my_new_prototype
+    $ cd my_new_prototype
+    $ npm install
+    $ grunt
+
+## Features
+
+### Todo
 
 - Angular example / default controller and init
 - [Font Awesome](http://fontawesome.io/) / [❍ IcoMoon](http://icomoon.io/)
@@ -18,6 +27,7 @@ Goal: deployable zero-configuration prototyping stack for designers.
 - Config / Meta .json
 - LocalStorage
     - import/export json
+- yeoman generator
 - run on [Hoodie](http://hood.ie/) / as hoodie plugin?
 - [CouchDB](https://couchdb.apache.org/)
     - ? default (admin) user
@@ -26,6 +36,7 @@ Goal: deployable zero-configuration prototyping stack for designers.
 - testing: unit, integration, design regression
 - onboarding defaults
 - inline usertesting
+- sublime text project file
 
 
 ### Done
