@@ -17,7 +17,6 @@ Needs node.
 
 - Angular example / default controller and init
 - [Font Awesome](http://fontawesome.io/) / [❍ IcoMoon](http://icomoon.io/)
-- ? [normalize](http://necolas.github.io/normalize.css/)
 - typography basics (maybe [Typeplate](http://typeplate.com/)?)
     - fontstack
 - basic layout defaults (margins, paddings)
@@ -52,6 +51,7 @@ Needs node.
 - √ Angular
 - √ [Colors](http://clrs.cc/)
 - √ clean app.js called from index.js
+- √ [normalize](http://necolas.github.io/normalize.css/)
 
 ## Fix me
 
