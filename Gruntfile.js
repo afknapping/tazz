@@ -48,6 +48,10 @@ module.exports = function(grunt){
         files: ['src/**/*.html', 'src/**/*.js', 'src/**/*.css', 'src/**/*.{png,jpg}'],
         tasks: 'tinylr-reload'
       },
+      data: {
+        files: 'data/*.json',
+        tasks: 'copy:data'
+      },
     },
     sass: {
       dist: {
@@ -86,6 +90,11 @@ module.exports = function(grunt){
       }
     },
     copy: {
+
+      data: {
+        src: 'data/data.json',
+        dest: 'build/data.json'
+      },
 
       bower_components: {
         expand: true,

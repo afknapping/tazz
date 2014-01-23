@@ -1,15 +1,22 @@
-html
+html(ng-app="myApp")
 head
-  meta(charset="utf-8")
-  title
-  link(href="index.css" rel="stylesheet" type="text/css")
-  script(data-main="index", src="require.js")
-
-body
-  p.
-    hello welt, hello jades
-  p.
-    hello line
+    meta(charset="utf-8")
+    title
+    link(href="index.css" rel="stylesheet" type="text/css")
+    script(src="bower_components/angular/angular.min.js")    
+    script(src="index.js")
+    script(src="app.js")
 
 
-  script(src="//localhost:35729/livereload.js")
+
+
+body(ng-controller="MyCtrl")
+    div
+        p.
+            Hello, {{ planet }}! {{ daCall }}
+
+
+
+
+
+script(src="//localhost:35729/livereload.js")
