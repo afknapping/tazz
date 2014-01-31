@@ -3,20 +3,22 @@ head
     meta(charset="utf-8")
     title
     link(href="index.css" rel="stylesheet" type="text/css")
-    script(src="bower_components/angular/angular.min.js")    
+    script(src="bower_components/angular/angular.min.js") 
+    script(src="bower_components/angular-animate/angular-animate.min.js")    
     script(src="index.js")
     script(src="app.js")
 
 
 
-
 body(ng-controller="MyCtrl")
+    fabian()
+
     div
         p.
-            Hello, {{ planet }}! {{ daCall }}
+            Blubbi, {{ planet }}! {{ daCall }}
 
-
-
-
+    destination-container
+        destination( heading="{{destination.title}}" ng-repeat="destination in destinations" destination="destination")
+            
 
 script(src="//localhost:35729/livereload.js")
