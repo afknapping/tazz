@@ -59,7 +59,6 @@ module.exports = function(grunt){
         options: {
                 style: 'expanded',
                 lineNumbers: true,
-                compass: true,
         },
         files: [{
           expand: true,
