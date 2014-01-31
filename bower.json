@@ -15,7 +15,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.8",
+    "angular": "~1.2.10",
+    "angular-animate": "~1.2.10",
     "longest": "*",
     "mrmrs-colors": "*",
     "requirejs": "~2.1.10",

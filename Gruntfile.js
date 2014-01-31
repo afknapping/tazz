@@ -31,7 +31,8 @@ module.exports = function(grunt){
       },
       scripts: {
         files: [ 'src/**/*.js'],
-        tasks: ['jshint', 'copy:js'],
+        tasks: ['copy:js'],
+        // tasks: ['jshint', 'copy:js'],
         // options: {
         //   spawn: false,
         // },
