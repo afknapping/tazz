@@ -21,44 +21,44 @@ module.exports = function(grunt){
       options: {
         livereload: true,  
       },
-      jade: {
-        files: ['src/**/*.jade'],
-        tasks: ['jade'],
-      },
-      html: {
-        files: ['src/**/*.html'],
-        tasks: ['log'],
-      },
-      scripts: {
-        files: [ 'src/**/*.js'],
-        tasks: ['jshint', 'copy:js'],
-        // options: {
-        //   spawn: false,
-        // },
-      },
-      coffee: {
-        files: [ 'src/**/*.coffee' ],
-        tasks: [ 'coffee' ],
-      },
-      css: {
-        files: 'src/**/*.sass',
-        tasks: ['sass'],
-      },
+      // jade: {
+      //   files: ['src/**/*.jade'],
+      //   tasks: ['jade'],
+      // },
+      // html: {
+      //   files: ['src/**/*.html'],
+      //   tasks: ['log'],
+      // },
+      // scripts: {
+      //   files: [ 'src/**/*.js'],
+      //   tasks: ['jshint', 'copy:js'],
+      //   // options: {
+      //   //   spawn: false,
+      //   // },
+      // },
+      // coffee: {
+      //   files: [ 'src/**/*.coffee' ],
+      //   tasks: [ 'coffee' ],
+      // },
+      // css: {
+      //   files: 'src/**/*.sass',
+      //   tasks: ['sass'],
+      // },
       reload: {
-        files: ['src/**/*.html', 'src/**/*.js', 'src/**/*.css', 'src/**/*.{png,jpg}'],
-        tasks: 'tinylr-reload'
+        files: ['src/**/*.html', 'src/**/*.js', 'src/**/*.css', 'src/**/*.{png,jpg}', 'src/**/*.sass' ],
+        // tasks: 'tinylr-reload'
       },
-      data: {
-        files: 'data/*.json',
-        tasks: 'copy:data'
-      },
+      // data: {
+      //   files: 'data/*.json',
+      //   tasks: 'copy:data'
+      // },
     },
     sass: {
       dist: {
         options: {
                 style: 'expanded',
                 lineNumbers: true,
-                compass: true,
+                compass: false,
         },
         files: [{
           expand: true,
@@ -67,10 +67,6 @@ module.exports = function(grunt){
           dest: 'build',
           ext: '.css'
         }],
-        // files: {
-        //   'src/proto.css': 'src/proto.sass'
-        // }
-
       }
     },
     jade: {
@@ -91,10 +87,10 @@ module.exports = function(grunt){
     },
     copy: {
 
-      data: {
-        src: 'data/data.json',
-        dest: 'build/data.json'
-      },
+  //     data: {
+  //       src: 'data/data.json',
+  //       dest: 'build/data.json'
+  //     },
 
       bower_components: {
         expand: true,
@@ -118,9 +114,9 @@ module.exports = function(grunt){
         dest: 'src/assets/stylesheets/normalize.scss'
       }
     },
-    jshint: {
-      all: [ 'Gruntfile.js', 'src/**/*.js' ]
-    },
+  //   jshint: {
+  //     all: [ 'Gruntfile.js', 'src/**/*.js' ]
+  //   },
 
     coffee: {
       glob_to_multiple: {
