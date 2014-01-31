@@ -92,8 +92,10 @@ module.exports = function(grunt){
     copy: {
 
       data: {
-        src: 'data/data.json',
-        dest: 'build/data.json'
+        expand: true,
+        cwd: 'data',
+        src: '**/*.json',
+        dest: 'build/data/'
       },
 
       bower_components: {

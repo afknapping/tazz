@@ -1,6 +1,13 @@
+
 var myApp = angular.module('myApp', ['ngAnimate']);
  
 myApp.controller('MyCtrl', function ($scope, $http) {
+
+  $http.get('/data/data.json')
+       .then(function(res){
+          $scope.data = res.data;
+        });
+
   $scope.planet = 'world';
   $scope.request = 'wurst';
   

@@ -11,7 +11,7 @@ head
 
 
 body(ng-controller="MyCtrl")
-    fabian()
+    fabian
 
     div
         p.
@@ -19,6 +19,9 @@ body(ng-controller="MyCtrl")
 
     destination-container
         destination( heading="{{destination.title}}" ng-repeat="destination in destinations" destination="destination")
+
+    div.data(ng-repeat="chunk in data")
+        {{ chunk.title }}
             
 
 script(src="//localhost:35729/livereload.js")
