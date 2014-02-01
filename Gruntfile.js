@@ -1,5 +1,37 @@
 module.exports = function(grunt){
-  
+
+// NEW ORDER (haha)
+
+// - copy:
+  // - if index.html
+  // - if templates/.html
+  // - assets
+    // - if css
+    // - if js
+    // - if images
+    // - if fonts
+
+// - compile:
+  // - jade
+  // - sass
+  // - coffee
+
+// - hint/lint
+// - init (copy, compile, hint/lint, reload)
+// - server
+
+// - watch
+  // - index.jade, templates/.jade
+  // - sass
+  // - coffee
+  // - if index.html
+  // - if templates/.html
+  // - css
+  // - js
+  // - images
+
+
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -87,19 +119,12 @@ module.exports = function(grunt){
     },
     copy: {
 
-<<<<<<< HEAD
-  //     data: {
-  //       src: 'data/data.json',
-  //       dest: 'build/data.json'
-  //     },
-=======
       data: {
         expand: true,
         cwd: 'data',
         src: '**/*.json',
         dest: 'build/data/'
       },
->>>>>>> master
 
       bower_components: {
         expand: true,
