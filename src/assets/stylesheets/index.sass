@@ -5,5 +5,48 @@
 @import normalize
 
 body
-  background-color: $olive
-  padding: 2em
+	background-color: $olive
+	padding: 2em
+
+.title, .main, .sub, .settings
+	padding: 0.5em
+
+.title
+	background-color: $yellow
+.main
+	background-color: $orange
+.sub
+	background-color: $red
+
+	
+.settings
+	background-color: $fuchsia
+	height: 250px
+	padding: 10px
+	border: 1px solid black
+	height: 250px
+	overflow: hidden
+	&.ng-hide-add, &.ng-hide-remove
+		transition: all ease 0.3s
+	
+	&.ng-hide-add.ng-hide-add-active, &.ng-hide-remove
+		opacity: 0
+		height: 0
+		display: block!important
+	&.ng-hide-add, &.ng-hide-remove.ng-hide-remove-active
+		opacity: 1
+		height: 250px
+
+.icon
+	border: 1px solid white
+	cursor: pointer
+
+.red
+	background-color: red
+
+.green
+	background-color: green
+
+.sample-show-hide
+
+	
