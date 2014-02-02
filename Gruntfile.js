@@ -1,5 +1,10 @@
 module.exports = function(grunt){
 
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+
+
+
 // NEW ORDER (haha)
 
 // - copy:
@@ -18,7 +23,7 @@ module.exports = function(grunt){
 
 // - hint/lint
 // - init (copy, compile, hint/lint, reload)
-// - server
+// - connect:server
 
 // - watch
   // - index.jade, templates/.jade
@@ -30,61 +35,21 @@ module.exports = function(grunt){
   // - js
   // - images
 
+// - concurrent
+  // - watch_and_serve
 
 
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
 
-    concurrent: {
-        watch_serve_reload: ['server', 'watch'],
-        options: {
-                logConcurrentOutput: true
-            }
-    },
-    connect: {
-      server: {
-        options: {
-          port: 3000,
-          base: 'build'
-        }
-      }
-    },
-    watch: {
-      options: {
-        livereload: true,  
+    // COMPILE TASKS
+    coffee: {
+      glob_to_multiple: {
+        expand: true,
+        flatten: true,
+        cwd: 'src/assets/javascripts',
+        src: ['**/*.coffee'],
+        dest: 'build',
+        ext: '.js',
       },
-      jade: {
-        files: ['src/**/*.jade'],
-        tasks: ['jade'],
-      },
-      html: {
-        files: ['src/**/*.html'],
-        tasks: ['log'],
-      },
-      scripts: {
-        files: [ 'src/**/*.js'],
-        tasks: ['copy:js'],
-        // tasks: ['jshint', 'copy:js'],
-        // options: {
-        //   spawn: false,
-        // },
-      },
-      coffee: {
-        files: [ 'src/**/*.coffee' ],
-        tasks: [ 'coffee' ],
-      },
-      css: {
-        files: 'src/**/*.sass',
-        tasks: ['sass'],
-      },
-      reload: {
-        files: ['src/**/*.html', 'src/**/*.js', 'src/**/*.css', 'src/**/*.{png,jpg}', 'src/**/*.sass' ],
-        // tasks: 'tinylr-reload'
-      },
-      // data: {
-      //   files: 'data/*.json',
-      //   tasks: 'copy:data'
-      // },
     },
     sass: {
       dist: {
@@ -117,8 +82,9 @@ module.exports = function(grunt){
         } ]
       }
     },
-    copy: {
 
+    // COPY TASKS
+    copy: {
       data: {
         expand: true,
         cwd: 'data',
@@ -127,11 +93,18 @@ module.exports = function(grunt){
       },
 
       bower_components: {
+      // bower components need to be available 
         expand: true,
         cwd: 'bower_components',
         dest: 'build/bower_components',
         src: '**/*',
       },
+      normalize : {
+        // needs to be copied into an scss file to enable sass import :(
+        src: 'bower_components/normalize-css/normalize.css',
+        dest: 'src/assets/stylesheets/normalize.scss'
+      },
+
 
       js: {
         expand: true,
@@ -142,26 +115,76 @@ module.exports = function(grunt){
         filter: 'isFile',
       },
 
-      normalize : {
-        // needs to be copied into an scss file to enable import :(
-        src: 'bower_components/normalize-css/normalize.css',
-        dest: 'src/assets/stylesheets/normalize.scss'
-      }
+      html: {
+        // TODO
+      },
+
+      css: {
+        // TODO
+      },
+
     },
+
+
+    // WATCH
+    watch: {
+      options: {
+        livereload: true,  
+      },
+
+      jade: {
+        files: ['src/**/*.jade'],
+        tasks: ['jade'],
+      },
+      html: {
+        files: ['src/**/*.html'],
+        tasks: ['log'],
+      },
+
+      js: {
+        files: [ 'src/**/*.js'],
+        tasks: ['copy:js'],
+      },
+      coffee: {
+        files: [ 'src/**/*.coffee' ],
+        tasks: [ 'coffee' ],
+      },
+
+      sass: {
+        files: 'src/**/*.sass',
+        tasks: ['sass'],
+      },
+      data: {
+        files: 'data/**/*.*',
+        tasks: 'copy:data'
+      },
+    },
+
+
+
   //   jshint: {
   //     all: [ 'Gruntfile.js', 'src/**/*.js' ]
   //   },
 
-    coffee: {
-      glob_to_multiple: {
-        expand: true,
-        flatten: true,
-        cwd: 'src/assets/javascripts',
-        src: ['**/*.coffee'],
-        dest: 'build',
-        ext: '.js',
-      },
-  },
+    // CONNECT SERVER
+    connect: {
+      server: {
+        options: {
+          port: 3000,
+          base: 'build'
+        }
+      }
+    },
+
+    // CONCURRENT FOR WATCH AND SERVE
+    concurrent: {
+        watch_serve_reload: ['server', 'watch'],
+        options: {
+                logConcurrentOutput: true
+            }
+    },
+
+
 
   });
 
