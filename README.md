@@ -9,6 +9,7 @@ Needs node.
     $ git clone git@github.com:filtercake/stemcell.git my_new_prototype
     $ cd my_new_prototype
     $ npm install
+    $ bower install
     $ grunt
 
 ## Features
