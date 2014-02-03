@@ -116,11 +116,21 @@ module.exports = function(grunt){
       },
 
       html: {
-        // TODO
+        expand: true,
+        cwd: 'src/',
+        src: '**/*.html',
+        dest: 'build/',
+        flatten: true,
+        filter: 'isFile',
       },
 
       css: {
-        // TODO
+        expand: true,
+        cwd: 'src/assets/stylesheets/',
+        src: '**/*.css',
+        dest: 'build/',
+        flatten: true,
+        filter: 'isFile',
       },
 
     },
@@ -128,28 +138,29 @@ module.exports = function(grunt){
 
     // WATCH
     watch: {
-      options: {
-        livereload: true,  
+
+      html: {
+        files: ['src/**/*.html'],
+        tasks: ['copy:html'],
+      },
+      css: {
+        files: ['src/**/*.css'],
+        tasks: ['copy:css'],
+      },
+      js: {
+        files: [ 'src/**/*.js'],
+        tasks: ['copy:js'],
       },
 
       jade: {
         files: ['src/**/*.jade'],
         tasks: ['jade'],
       },
-      html: {
-        files: ['src/**/*.html'],
-        tasks: ['log'],
-      },
 
-      js: {
-        files: [ 'src/**/*.js'],
-        tasks: ['copy:js'],
-      },
       coffee: {
         files: [ 'src/**/*.coffee' ],
         tasks: [ 'coffee' ],
       },
-
       sass: {
         files: 'src/**/*.sass',
         tasks: ['sass'],
@@ -157,6 +168,18 @@ module.exports = function(grunt){
       data: {
         files: 'data/**/*.*',
         tasks: 'copy:data'
+      },
+      watch_build: {
+        files: [
+          'build/*.css',
+          'build/*.html',
+          'build/*.js',
+          'build/assets/**',
+        ],
+        options: {
+          livereload: true,  
+        },
+
       },
     },
 
