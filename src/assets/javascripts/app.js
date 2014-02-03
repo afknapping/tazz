@@ -9,8 +9,24 @@ myApp.controller('MyCtrl', function ($scope, $http) {
         });
 
   $scope.planet = 'world';
-  $scope.request = 'wurst';
+
+  $scope.exampleList = [
+    'item 1',
+    'item 2',
+    'item 3',
+  ],
   
+  $scope.exampleObjectList =[
+    {
+      "title": "Object Nr 1",
+      "uistate": false,
+    },
+    {
+      "title": "Object Nr 2",
+      "uistate": true,
+    },
+  ], 
+
   $scope.destinations = [
     {
       title: 'Germaeeny'
@@ -22,11 +38,12 @@ myApp.controller('MyCtrl', function ($scope, $http) {
   ];
 
 })
-.directive('fabian', function() {
+
+.directive('lib', function() {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: 'fabian.html'
+      templateUrl: '/templates/lib.html'
     };
 })
 

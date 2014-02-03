@@ -11,7 +11,14 @@ head
 
 
 body(ng-controller="MyCtrl")
-    fabian
+    lib
+
+    div(ng-repeat="item in exampleList")
+        | {{ item }}
+
+    div(ng-repeat="item in exampleObjectList" ng-click="item.uistate=!item.uistate")
+        | {{ item.title }}
+        | {{ item.uistate }}
 
     div
         p.
