@@ -1,9 +1,9 @@
 {
-  "name": "stemcell",
-  "version": "0.0.1",
+  "name": "tazz",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
-    "url": "git://github.com/filtercake/stemcell.git"
+    "url": "git://github.com/filtercake/tazz.git"
   },
   "devDependencies": {
     "grunt": "~0.4.2",

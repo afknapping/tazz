@@ -1,4 +1,4 @@
-# Stemcell
+# Tazz
 
 Goal: deployable zero-configuration prototyping stack for designers.
 
@@ -20,7 +20,7 @@ Some sugar:
 
 Needs [node.js](http://nodejs.org/) and [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli).
 
-    $ git clone git@github.com:filtercake/stemcell.git my_new_prototype
+    $ git clone git@github.com:filtercake/tazz.git my_new_prototype
     $ cd my_new_prototype
     $ npm install
     $ bower install
