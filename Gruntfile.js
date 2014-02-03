@@ -99,12 +99,6 @@ module.exports = function(grunt){
         dest: 'build/bower_components',
         src: '**/*',
       },
-      normalize : {
-        // needs to be copied into an scss file to enable sass import :(
-        src: 'bower_components/normalize-css/normalize.css',
-        dest: 'src/assets/stylesheets/normalize.scss'
-      },
-
 
       js: {
         expand: true,
@@ -216,7 +210,7 @@ module.exports = function(grunt){
   });
   grunt.registerTask('inital_compile', [ 'sass', 'jade', 'coffee', 'copy' ]);
   grunt.registerTask('server', [ 'connect:server:keepalive' ]);
-  grunt.registerTask('default', [ 'copy:normalize', 'inital_compile', 'concurrent:watch_serve_reload' ]);
+  grunt.registerTask('default', [ 'copy', 'inital_compile', 'concurrent:watch_serve_reload' ]);
   
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
