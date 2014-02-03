@@ -4,7 +4,7 @@ Goal: deployable zero-configuration prototyping stack for designers.
 
 ## Use
 
-Needs node.
+Needs [node.js](http://nodejs.org/) and [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli).
 
     $ git clone git@github.com:filtercake/stemcell.git my_new_prototype
     $ cd my_new_prototype
@@ -13,6 +13,18 @@ Needs node.
     $ grunt
 
 ## Features
+
+Start protyping your app instantly with
+
+- [AngularJS](http://angularjs.org/)
+- [Sass](http://sass-lang.com/)
+- [Jade](http://jade-lang.com/)
+- [CoffeeScript](http://coffeescript.org/)
+- or use vanilla HTML/CSS/JS
+
+More sugar:
+- [LiveReload](http://livereload.com/)
+- [Colors](http://clrs.cc/)
 
 ### Todo
 
