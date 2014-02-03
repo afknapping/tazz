@@ -2,16 +2,6 @@
 
 Goal: deployable zero-configuration prototyping stack for designers.
 
-## Use
-
-Needs [node.js](http://nodejs.org/) and [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli).
-
-    $ git clone git@github.com:filtercake/stemcell.git my_new_prototype
-    $ cd my_new_prototype
-    $ npm install
-    $ bower install
-    $ grunt
-
 ## Features
 
 Start protyping your app instantly with
@@ -22,52 +12,25 @@ Start protyping your app instantly with
 - [CoffeeScript](http://coffeescript.org/)
 - or use vanilla HTML/CSS/JS
 
-More sugar:
+Some sugar:
 - [LiveReload](http://livereload.com/)
 - [Colors](http://clrs.cc/)
 
-### Todo
+## Use
 
-- Angular example / default controller and init
-- [Font Awesome](http://fontawesome.io/) / [❍ IcoMoon](http://icomoon.io/)
-- typography basics (maybe [Typeplate](http://typeplate.com/)?)
-    - fontstack
-- basic layout defaults (margins, paddings)
-- basic interface elements
-    - ? [necolas/css3-github-buttons](https://github.com/necolas/css3-github-buttons)
-- foldout footer with design guide: colors, elements, styles, etc...
-- Config / Meta .json
-- LocalStorage
-    - import/export json
-- yeoman generator
-- run on [Hoodie](http://hood.ie/) / as hoodie plugin?
-- [CouchDB](https://couchdb.apache.org/)
-    - ? default (admin) user
-- markdown support (for what?)
-- content (i18n?)
-- testing: unit, integration, design regression
-- onboarding defaults
-- inline usertesting
-- sublime text project file
+Needs [node.js](http://nodejs.org/) and [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli).
 
+    $ git clone git@github.com:filtercake/stemcell.git my_new_prototype
+    $ cd my_new_prototype
+    $ npm install
+    $ bower install
+    $ grunt
 
-### Done
+You should be able to look at the compiled page at <http://localhost:3000/>.
 
-- √ Sass
-- √ Jade
-- √ Coffeescript
-- √ copy plain js files to build
-- √ JSHint
-- X CSSLint (not for now)
-- √ Require
-- √ Bower
-- √ Angular
-- √ [Colors](http://clrs.cc/)
-- √ clean app.js called from index.js
-- √ [normalize](http://necolas.github.io/normalize.css/)
+## FAQ
 
-## Fix me
-
-- copy raw css and html files should they exist
-- find nicer name
-- √ copy whole bower directory to build, so bower libs do not have to be handled in two places (only require, no copy via grunt)
+- Does it have a UI Kit yet? No.
+- Does it have a database yet? No.
+- Is it deployable yet? No.
+- Does it have a license yet? No.
