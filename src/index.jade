@@ -11,12 +11,21 @@ head
 
 
 body(ng-controller="MyCtrl")
+    
+    .text
+        :markdown
+            # Hi Tazz!
+
+            This is your canvas. Check the source of `index.jade` to see what is happening and `app.js` how it works.
+
+
+
     lib
 
-    div(ng-repeat="item in exampleList")
+    li(ng-repeat="item in exampleList")
         | {{ item }}
 
-    div(ng-repeat="item in exampleObjectList" ng-click="item.uistate=!item.uistate")
+    li(ng-repeat="item in exampleObjectList" ng-click="item.uistate=!item.uistate")
         | {{ item.title }}
         | {{ item.uistate }}
 
