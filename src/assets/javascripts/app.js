@@ -1,4 +1,25 @@
 
+
+var tazz = angular.module('tazz', [] );
+tazz.controller('TazzCtrl', function ($scope, $http) {
+  $scope.library = {
+    // http://www.pattern-lab.info/
+    "isOpen": false,
+    "atoms": [
+      {
+        "title": "test atom",
+        "content": "", // I am {{ this.title }}
+        "markup": "<input type='text'>"
+      },
+    ],
+    "molecules": {},
+    "organs": {},
+    "templates": {},
+    "views": {},
+    // kinda shows how pattern lab is coming from a more static page based background
+  };
+})
+
 var myApp = angular.module('myApp', ['ngAnimate']);
  
 myApp.controller('MyCtrl', function ($scope, $http) {

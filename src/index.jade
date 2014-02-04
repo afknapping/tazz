@@ -1,4 +1,5 @@
-html(ng-app="myApp")
+html(ng-app="tazz")
+    //- html(ng-app="myApp")
 head
     meta(charset="utf-8")
     title
@@ -10,7 +11,12 @@ head
 
 
 
-body(ng-controller="MyCtrl")
+//- body(ng-controller="MyCtrl")
+body(ng-controller="TazzCtrl")
+
+    div(ng-repeat="atom in library.atoms")
+        | {{ atom.title }}
+        | {{ atom.markup }}
     
     .text
         :markdown
