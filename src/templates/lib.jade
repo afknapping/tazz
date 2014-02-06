@@ -1,7 +1,15 @@
 .lib(ng-model="library")
   h2
-    | welcome to the library
+    | Library
   .libcontent
-    span.mrsmr-colors(ng-repeat="element in library.elements" ng-class="'{{ element.title }}'")
-      | {{ element.title }}
-      | {{ element.content }}
+    h3
+      | Colors
+    .colors
+      p.intro
+        | You can use color combinations as Sass mixins like this: 
+      p 
+        code
+          | +olive
+
+      span.mrsmr-colors(ng-repeat="color in library.colors" ng-class="'{{ color }}'")
+        | {{ color }}
