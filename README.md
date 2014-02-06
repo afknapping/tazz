@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/filtercake/tazz.png?label=ready)](https://waffle.io/filtercake/tazz)
 # Tazz
 
 Goal: deployable zero-configuration prototyping stack for designers.
