@@ -12,8 +12,8 @@
 
 // foreground mixins define the colors of the outlinish things like type and borders
 @mixin light-foreground
-  color: $silver
-  border: 1px solid $silver
+  color: $white
+  border: 1px solid $white
 @mixin dark-foreground
   color: $black
   border: 1px solid $black
@@ -45,11 +45,31 @@
   +dark-foreground
 @mixin orange
   background-color: $orange
-  +dark-foreground
+  +light-foreground
 @mixin red
   background-color: $red
+  +light-foreground
+@mixin maroon
+  background-color: $maroon
+  +light-foreground
+@mixin fuchsia
+  background-color: $fuchsia
+  +light-foreground
+@mixin purple
+  background-color: $purple
+  +light-foreground
+@mixin white
+  background-color: $white
   +dark-foreground
-
+@mixin silver
+  background-color: $silver
+  +dark-foreground
+@mixin gray
+  background-color: $gray
+  +dark-foreground
+@mixin black
+  background-color: $black
+  +light-foreground
 
 
 // for display in the library we also need classes which use the mixins for styling
@@ -61,12 +81,29 @@
   +aqua
 .teal
   +teal
-
-
-.test-atom
-
-
-
-
-
-
+.olive
+  +olive
+.green
+  +green
+.lime
+  +lime
+.yellow
+  +yellow
+.orange
+  +orange
+.red
+  +red
+.maroon
+  +maroon
+.fuchsia
+  +fuchsia
+.purple
+  +purple
+.white
+  +white
+.silver
+  +silver
+.gray
+  +gray
+.black
+  +black
