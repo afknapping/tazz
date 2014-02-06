@@ -2,14 +2,10 @@
   h2
     | Library
   .libcontent
-    h3
-      | Colors
     .colors
-      p.intro
-        | You can use color combinations as Sass mixins like this: 
-      p 
-        code
-          | +olive
+      :markdown
+        ### Colors
+        [clrs.cc](http://clrs.cc/) mixins  like `+olive` or `+fuchsia` define background, text and border colors:
 
       span.mrsmr-colors(ng-repeat="color in library.colors" ng-class="'{{ color }}'")
         | {{ color }}
