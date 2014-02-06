@@ -1,0 +1,72 @@
+// library styles
+
+// a basic class for showing the color swatches of... well, "colors"
+.mrsmr-colors
+  padding: 1em
+  margin: 0 1em 1em 0
+  font-size: 10px
+  display: inline-block
+  width: 4em
+  text-align: center
+
+
+// foreground mixins define the colors of the outlinish things like type and borders
+@mixin light-foreground
+  color: $silver
+  border: 1px solid $silver
+@mixin dark-foreground
+  color: $black
+  border: 1px solid $black
+
+// main color mixins define the background color and use either a light or dark foreground mixin
+@mixin navy
+  background-color: $navy
+  +light-foreground
+@mixin blue
+  background-color: $blue
+  +dark-foreground
+@mixin aqua
+  background-color: $aqua
+  +dark-foreground
+@mixin teal
+  background-color: $teal
+  +dark-foreground
+@mixin olive
+  background-color: $olive
+  +dark-foreground
+@mixin green
+  background-color: $green
+  +dark-foreground
+@mixin lime
+  background-color: $lime
+  +dark-foreground
+@mixin yellow
+  background-color: $yellow
+  +dark-foreground
+@mixin orange
+  background-color: $orange
+  +dark-foreground
+@mixin red
+  background-color: $red
+  +dark-foreground
+
+
+
+// for display in the library we also need classes which use the mixins for styling
+.navy
+  +navy
+.blue
+  +blue
+.aqua
+  +aqua
+.teal
+  +teal
+
+
+.test-atom
+
+
+
+
+
+

@@ -1,7 +1,7 @@
-.lib
-    h2
-    | welcome to the lib
-    .libcontent
-        span(ng-repeat="element in library.elements")
-            | {{ element.title }}
-            | {{ element.content }}
+.lib(ng-model="library")
+  h2
+    | welcome to the library
+  .libcontent
+    span.mrsmr-colors(ng-repeat="element in library.elements" ng-class="'{{ element.title }}'")
+      | {{ element.title }}
+      | {{ element.content }}

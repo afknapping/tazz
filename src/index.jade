@@ -20,32 +20,15 @@ body(ng-controller="TazzCtrl")
 
             This is your canvas. Check the source of `index.jade` to see what is happening and `app.js` how it works.
 
-
-    button.btn(ng-click="library.uiState.isOpen = !library.uiState.isOpen")
-        span(ng-if="!library.uiState.isOpen")
-            | Show library
-        span(ng-if="library.uiState.isOpen")
-            | Hide library
+    .footer(ng-model="library")
+        button.btn(ng-click="library.uiState.isOpen = !library.uiState.isOpen")
+            span(ng-if="!library.uiState.isOpen")
+                | Show library
+            span(ng-if="library.uiState.isOpen")
+                | Hide library
 
     lib(ng-show="library.uiState.isOpen")
 
 
-    li(ng-repeat="item in exampleList")
-        | {{ item }}
-
-    li(ng-repeat="item in exampleObjectList" ng-click="item.uistate=!item.uistate")
-        | {{ item.title }}
-        | {{ item.uistate }}
-
-    div
-        p.
-            Blubbi, {{ planet }}! {{ daCall }}
-
-    destination-container
-        destination( heading="{{destination.title}}" ng-repeat="destination in destinations" destination="destination")
-
-    div.data(ng-repeat="chunk in data")
-        {{ chunk.title }}
-            
 
 script(src="//localhost:35729/livereload.js")
