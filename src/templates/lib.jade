@@ -1,6 +1,7 @@
 .lib
     h2
     | welcome to the lib
-    span(ng-repeat="element in library.elements")
-        | {{ element.title }}
-        | {{ element.content }}
+    .libcontent
+        span(ng-repeat="element in library.elements")
+            | {{ element.title }}
+            | {{ element.content }}
