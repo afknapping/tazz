@@ -5,19 +5,15 @@ var tazz = angular.module('tazz', ['ngAnimate']);
 tazz.controller('TazzCtrl', function ($scope, $http) {
   $scope.library = {
     // http://www.pattern-lab.info/
-    "isOpen": false,
-    "atoms": [
+    "uiState": {
+      "isOpen": false,
+    },
+    "elements": [
       {
         "title": "test atom",
-        "content": "", // I am {{ this.title }}
-        "markup": "<input type='text'>"
+        "content": "hello content",
       },
     ],
-    "molecules": {},
-    "organs": {},
-    "templates": {},
-    "views": {},
-    // kinda shows how pattern lab is coming from a more static page based background
   };
 })
 

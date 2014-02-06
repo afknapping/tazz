@@ -13,10 +13,6 @@ head
 
 //- body(ng-controller="MyCtrl")
 body(ng-controller="TazzCtrl")
-
-    div(ng-repeat="atom in library.atoms")
-        | {{ atom.title }}
-        | {{ atom.markup }}
     
     .text
         :markdown
@@ -25,8 +21,14 @@ body(ng-controller="TazzCtrl")
             This is your canvas. Check the source of `index.jade` to see what is happening and `app.js` how it works.
 
 
+    button.btn(ng-click="library.uiState.isOpen = !library.uiState.isOpen")
+        span(ng-if="!library.uiState.isOpen")
+            | Show library
+        span(ng-if="library.uiState.isOpen")
+            | Hide library
 
-    lib
+    lib(ng-show="library.uiState.isOpen")
+
 
     li(ng-repeat="item in exampleList")
         | {{ item }}
