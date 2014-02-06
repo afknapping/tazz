@@ -1,6 +1,7 @@
 
 
-var tazz = angular.module('tazz', [] );
+var tazz = angular.module('tazz', ['ngAnimate']);
+ 
 tazz.controller('TazzCtrl', function ($scope, $http) {
   $scope.library = {
     // http://www.pattern-lab.info/
@@ -20,9 +21,7 @@ tazz.controller('TazzCtrl', function ($scope, $http) {
   };
 })
 
-var myApp = angular.module('myApp', ['ngAnimate']);
- 
-myApp.controller('MyCtrl', function ($scope, $http) {
+tazz.controller('MyCtrl', function ($scope, $http) {
 
   $http.get('/data/data.json')
        .then(function(res){
