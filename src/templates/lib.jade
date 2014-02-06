@@ -1,11 +1,29 @@
 .lib(ng-model="library")
-  h2
-    | Library
-  .libcontent
-    .colors
-      :markdown
-        ### Colors
-        [clrs.cc](http://clrs.cc/) mixins  like `+olive` or `+fuchsia` define background, text and border colors:
+  :markdown
+    ## Library
+    This library is a micro Angular app where you can check out some very basic beginner stuff to get started, like:
 
-      span.mrsmr-colors(ng-repeat="color in library.colors" ng-class="'{{ color }}'")
-        | {{ color }}
+    - Controllers
+    - Models
+    - Directives
+    - HTTP Requests
+    - iteration
+    - conditional rendering
+    
+    See the source code to see how it works.
+
+    Following are some basic styles so you can make your thing look not sucky. Everything is available as mixins, which are fast to write. Again, see the .sass files to see how they are built.
+
+    ### Colors
+
+  span.mrsmr-colors(ng-repeat="color in library.colors" ng-class="'{{ color }}'")
+      | {{ color }}
+
+  :markdown
+    You can use these [colors](http://clrs.cc/) as mixins like `+olive` or `+fuchsia`. They define background, text and border colors.
+
+    ### Forms
+    ### Effects
+    ### Transitions
+    ### UI Elements
+

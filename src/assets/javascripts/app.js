@@ -4,7 +4,7 @@ var tazz = angular.module('tazz', ['ngAnimate']);
  
 tazz.controller('TazzCtrl', function ($scope, $http) {
 
-  $scope.planet = 'world';
+  $scope.world = 'Tazz';
 
   $http.get('/data/lib.json')
      .then(function(res){

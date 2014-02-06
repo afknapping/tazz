@@ -16,9 +16,7 @@ body(ng-controller="TazzCtrl")
     
     .text
         :markdown
-            # Hi Tazz!
-
-            This is your canvas. Check the source of `index.jade` to see what is happening and `app.js` how it works.
+            # Hello {{ world }}!
 
     .footer(ng-model="library")
         button.btn(ng-click="library.uiState.isOpen = !library.uiState.isOpen")

@@ -16,6 +16,8 @@ Some sugar:
 - [LiveReload](http://livereload.com/)
 - [Colors](http://clrs.cc/)
 
+![](res/14-02-06.png)
+
 ## Use
 
 Needs [node.js](http://nodejs.org/) and [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli).
