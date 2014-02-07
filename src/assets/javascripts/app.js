@@ -1,7 +1,7 @@
 
 
 
-var tazz = angular.module('tazz', ['angularLocalStorage']);
+var tazz = angular.module('tazz', ['angularLocalStorage', 'ngAnimate']);
  
 tazz.controller('TazzCtrl', function ($scope, $http, storage) {
 

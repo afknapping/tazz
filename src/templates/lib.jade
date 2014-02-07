@@ -9,8 +9,9 @@
     - HTTP Requests
     - iteration
     - conditional rendering
+    - Animations
     
-    See the source code to see how it works.
+    See the source code to learn how it works.
 
     Following are some basic styles so you can make your thing look not sucky. Everything is available as mixins, which are fast to write. Again, see the .sass files to see how they are built.
 
@@ -22,8 +23,49 @@
   :markdown
     You can use these [colors](http://clrs.cc/) as mixins like `+olive` or `+fuchsia`. They define background, text and border colors.
 
-    ### Forms
-    ### Effects
-    ### Transitions
-    ### UI Elements
+    ### Basic margins and paddings
 
+    ### Shape
+
+    - rounded corners
+    - circles
+
+    ### Effects
+
+    - text-shadow
+    - box-shadow
+    - lite emboss
+    - lite background noise
+
+    ### Transitions
+
+    Transitions in Angular are fully CSS3. It's just a bit tricky to understand what classes are applied when and were the `transition` properties need to be set. Recommended reading are [Remastered Animation in AngularJS 1.2](http://www.yearofmoo.com/2013/08/remastered-animation-in-angularjs-1-2.html#how-to-make-animations-in-angularjs) and [the offical docs for ngAnimate](http://docs.angularjs.org/api/ngAnimate).
+
+    There are two mixins and a standard transition provided from this library. Call them like this:
+
+          +revealTo
+            opacity: 1
+          +revealFrom
+            opacity: 0
+
+    Or specify custom transitions on call and animate multiple attributes at once:
+
+          +revealTo(1s linear all)
+            opacity: 1
+            background-color: red
+          +revealFrom(2s bicubic all)
+            opacity: 0
+            background-color: yellow
+
+
+
+    ### Standard UI Elements
+
+    - Buttons
+    - Forms
+    - Checkboxes
+    - Dropdowns
+
+    ### Markdown Elements
+
+    - H1 - H6, p, pre/code, img, ul, ol, hr
