@@ -13,10 +13,17 @@ tazz.controller('TazzCtrl', function ($scope, $http, storage) {
         console.log('yo');
       });
   };
+
   storage.bind($scope,'data');
+
   $scope.data.addNewThing = function(newThing) {
     console.log(newThing);
     $scope.data.myFavouriteThings.push(newThing);
+  };
+  
+  $scope.data.deleteThing = function(thing) {
+    console.log(thing);
+    $scope.data.myFavouriteThings.splice(thing, 1);
   };
 
   $scope.world = 'Tazz';

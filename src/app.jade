@@ -23,11 +23,24 @@
     h2
       | A list:
     ul
-      li(ng-repeat="thing in data.myFavouriteThings track by $index")
-        {{ thing }}
+      li.thing(ng-repeat="thing in data.myFavouriteThings track by $index")
+        //- http://docs.angularjs.org/error/ngRepeat:dupes
+        span
+          {{ thing }}
     h3
       | Add some things:
       p
         input.new-thing(ng-model="newThing" value="{{ newThing }}")
-        button.btn(ng-click="data.addNewThing(newThing)" ng-if="newThing")
+        button.btn.add-new-thing(ng-click="data.addNewThing(newThing)" ng-if="newThing")
           | Add "{{ newThing }}"
+    h3
+      | Delete them:
+      ul
+        li.thing(ng-repeat="thing in data.myFavouriteThings track by $index")
+          button.delete-thing(ng-click="data.deleteThing($index)")
+            | X
+          span
+            {{ thing }}
+
+
+

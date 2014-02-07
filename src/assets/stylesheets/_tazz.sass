@@ -18,3 +18,21 @@ a
   margin-top: 3em
 
 .new-thing
+
+.delete-thing 
+  +element-reset
+  +red
+  font-size: 10px
+  margin: 0 0.3em 0 0
+  padding: 0 0.3em
+  border-radius: 0.2em
+  position: relative
+  top: -0.3em
+.thing
+  +revealTo
+    opacity: 1
+  +revealFrom
+    opacity: 0
+
+.add-new-thing
+  margin-left: 1em
