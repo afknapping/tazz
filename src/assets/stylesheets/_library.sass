@@ -1,43 +1,34 @@
 // library styles
 
 // ngAnimate
-// http://www.yearofmoo.com/2013/08/remastered-animation-in-angularjs-1-2.html#how-to-make-animations-in-angularjs
 
 
+$base-transition: 0.5s ease all
 
-@mixin ngAnimateX($hidden, $there)
-  // mixin which works for both ng-if and and ngshow
-  // 1. the hidden state: hidden (ng-show) or not eveen rendered (ng-if)
-  &.ng-enter, &.ng-hide, &.ng-leave.ng-leave-active
-    height: 0
-  // 2. the exposed state: shown (ng-show) or rendered (ng-if)
+// set of mixins which works for both ng-if and and ng-show:
+// https://gist.github.com/filtercake/8870073
+@mixin revealTo($transition: $base-transition)
+  @content
+  // this is the state the element should animate towards and stay in after the animation.
+  // now we define the angular specific classes for ng-show and ng-if. This is where the animation is running *towards*:
   &.ng-enter.ng-enter-active, &.ng-hide-remove, &.ng-hide-add, &.ng-leave
-    height: 100px
+    @content
+    transition: $transition
     display: block !important
-
-
-@mixin ngAnimate
-  // mixin which works for both ng-if and and ngshow
-  // 1. the hidden state: hidden (ng-show) or not eveen rendered (ng-if)
+@mixin revealFrom($transition: $base-transition)
+  // at last, we define where the animation is running from:
   &.ng-enter, &.ng-hide, &.ng-leave.ng-leave-active
-    height: 0
-  // 2. the exposed state: shown (ng-show) or rendered (ng-if)
-  &.ng-enter.ng-enter-active, &.ng-hide-remove, &.ng-hide-add, &.ng-leave
-    height: 100px
-    display: block !important
+    @content
+    transition: $transition
 
 
-.my-special-animation
-  transition: 1s ease all
-  height: 100px
-  overflow: hidden
-  +ngAnimate
-
-
-
-
+// call the mixins in any element like this with default transition values:
 .mrsmr-colors, .lib
-  // +ngAnimate
+  +revealTo
+    opacity: 1
+  +revealFrom
+    opacity: 0
+
   
 
 

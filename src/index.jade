@@ -17,16 +17,10 @@ head
 body(ng-controller="TazzCtrl")
 
     div(ng-init="on=true")
-        button(ng-click="on=!on")
-            | Toggle
-        
-        .my-special-animation(ng-if="on")
-            h1
-                | This content will enter and leave
     
     .text
         :markdown
-            Hello {{ world }}!
+            # Hello {{ world }}!
 
     .footer(ng-model="library")
         button.btn(ng-click="library.uiState.isOpen = !library.uiState.isOpen")
