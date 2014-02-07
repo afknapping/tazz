@@ -41,10 +41,3 @@ You should then be able to look at the compiled page at <http://localhost:3000/>
 All input on how stuff could be done better/easier/simpler is welcome, just dump an issue.
 
 There is also a [board at waffle.io](https://waffle.io/filtercake/tazz): [![Stories in Ready](https://badge.waffle.io/filtercake/tazz.png?label=ready)](https://waffle.io/filtercake/tazz)
-
-## FAQ
-
-- Does it have a UI Kit yet? No.
-- Does it have a database yet? No.
-- Is it deployable yet? No.
-- Does it have a license yet? No.
