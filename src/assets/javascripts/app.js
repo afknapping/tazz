@@ -1,9 +1,9 @@
 
 
 
-var tazz = angular.module('tazz', ['angularLocalStorage']);
+var tazz = angular.module('tazz', ['angularLocalStorage', 'ngAnimate']);
  
-tazz.controller('TazzCtrl', function ($scope, $http) {
+tazz.controller('TazzCtrl', function ($scope, $http, storage) {
 
   $scope.world = 'Tazz';
 
@@ -13,6 +13,8 @@ tazz.controller('TazzCtrl', function ($scope, $http) {
       });
 
   // $scope.library = $scope.data;
+
+  storage.bind($scope,'library');
 
 })
 

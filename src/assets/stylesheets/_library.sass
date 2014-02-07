@@ -1,5 +1,46 @@
 // library styles
 
+// ngAnimate
+// http://www.yearofmoo.com/2013/08/remastered-animation-in-angularjs-1-2.html#how-to-make-animations-in-angularjs
+
+
+
+@mixin ngAnimateX($hidden, $there)
+  // mixin which works for both ng-if and and ngshow
+  // 1. the hidden state: hidden (ng-show) or not eveen rendered (ng-if)
+  &.ng-enter, &.ng-hide, &.ng-leave.ng-leave-active
+    height: 0
+  // 2. the exposed state: shown (ng-show) or rendered (ng-if)
+  &.ng-enter.ng-enter-active, &.ng-hide-remove, &.ng-hide-add, &.ng-leave
+    height: 100px
+    display: block !important
+
+
+@mixin ngAnimate
+  // mixin which works for both ng-if and and ngshow
+  // 1. the hidden state: hidden (ng-show) or not eveen rendered (ng-if)
+  &.ng-enter, &.ng-hide, &.ng-leave.ng-leave-active
+    height: 0
+  // 2. the exposed state: shown (ng-show) or rendered (ng-if)
+  &.ng-enter.ng-enter-active, &.ng-hide-remove, &.ng-hide-add, &.ng-leave
+    height: 100px
+    display: block !important
+
+
+.my-special-animation
+  transition: 1s ease all
+  height: 100px
+  overflow: hidden
+  +ngAnimate
+
+
+
+
+.mrsmr-colors, .lib
+  // +ngAnimate
+  
+
+
 // a basic class for showing the color swatches of... well, "colors"
 .mrsmr-colors
   padding: 1em
