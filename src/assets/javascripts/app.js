@@ -6,15 +6,16 @@ var tazz = angular.module('tazz', ['angularLocalStorage', 'ngAnimate']);
 tazz.controller('TazzCtrl', function ($scope, $http, storage) {
 
   $scope.world = 'Tazz';
-
-  $http.get('/data/lib.json')
-     .then(function(res){
-        $scope.library = res.data;
+  $scope.getTazzLibrary = function() {
+    $http.get('/data/tazz.json')
+      .then(function(res){
+        $scope.tazz = res.data;
+        console.log('yo');
       });
+  }; 
 
-  // $scope.library = $scope.data;
 
-  storage.bind($scope,'library');
+  storage.bind($scope,'tazz');
 
 })
 

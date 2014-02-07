@@ -15,21 +15,21 @@ head
 
 //- body(ng-controller="MyCtrl")
 body(ng-controller="TazzCtrl")
-
-    div(ng-init="on=true")
     
     .text
         :markdown
             # Hello {{ world }}!
 
-    .footer(ng-model="library")
-        button.btn(ng-click="library.uiState.isOpen = !library.uiState.isOpen")
-            span(ng-if="!library.uiState.isOpen")
+    .footer(ng-model="tazz")
+        button.btn(ng-click="tazz.uiState.isOpen = !tazz.uiState.isOpen")
+            span(ng-if="!tazz.uiState.isOpen")
                 | Show library
-            span(ng-if="library.uiState.isOpen")
+            span(ng-if="tazz.uiState.isOpen")
                 | Hide library
+        button.btn(ng-click="getTazzLibrary()")
+                | Reload tazz.json
 
-    lib(ng-show="library.uiState.isOpen")
+    lib(ng-show="tazz.uiState.isOpen")
 
 
 
