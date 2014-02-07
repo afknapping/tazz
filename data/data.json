@@ -1,3 +1,10 @@
 {
-  "myKey": "myValue"
+  "myKey": "myValue",
+  "myFavouriteThings": [
+    "Raindrops on roses",
+    "whiskers on kittens",
+    "Bright copper kettles",
+    "warm woolen mittens",
+    "Brown paper packages tied up with strings"
+  ]
 }

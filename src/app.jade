@@ -1,2 +1,33 @@
 .app(ng-model="data")
-  | data: {{ data }}
+  h1.
+    Welcome to your app.
+  .raw-data(ng-if="data")
+    h2.
+      This is your raw data:
+    p.
+      {{ data }}
+
+  .rendered-data(ng-if="data")
+    h2.
+      This is your rendered data:
+    p.
+      {{ data.myKey }}
+    .edit-data
+      h3.
+        You can edit it here:
+      p
+        input(ng-model="data.myKey" value="{{ data.myKey }}")
+      p.
+        Open your Local Storage in the inspector to see it sync.
+  .list
+    h2
+      | A list:
+    ul
+      li(ng-repeat="thing in data.myFavouriteThings track by $index")
+        {{ thing }}
+    h3
+      | Add some things:
+      p
+        input.new-thing(ng-model="newThing" value="{{ newThing }}")
+        button.btn(ng-click="data.addNewThing(newThing)" ng-if="newThing")
+          | Add "{{ newThing }}"

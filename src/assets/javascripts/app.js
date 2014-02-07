@@ -14,6 +14,10 @@ tazz.controller('TazzCtrl', function ($scope, $http, storage) {
       });
   };
   storage.bind($scope,'data');
+  $scope.data.addNewThing = function(newThing) {
+    console.log(newThing);
+    $scope.data.myFavouriteThings.push(newThing);
+  };
 
   $scope.world = 'Tazz';
   $scope.getTazzLibrary = function() {
