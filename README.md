@@ -1,26 +1,32 @@
 # Tazz
 
-Goal: deployable zero-configuration prototyping stack for designers.
+Deployable zero-configuration prototyping stack for designers.
+
+![](res/14-02-08.png)
 
 ## Features
 
-Start protyping your app instantly with
+Start protyping your app instantly with the L.E.A.N.™ Stack
 
+- [Local Storage](https://en.wikipedia.org/wiki/LocalStorage#localStorage)
+- Einhörner
 - [AngularJS](http://angularjs.org/)
+- [Node](http://nodejs.org/)
+
+Supports by default
+
 - [Sass](http://sass-lang.com/)
 - [Jade](http://jade-lang.com/)
 - [CoffeeScript](http://coffeescript.org/)
-- or use vanilla HTML/CSS/JS
+- or vanilla HTML/CSS/JS
 
 Sugar:
 - [LiveReload](http://livereload.com/)
-- [Colors](http://clrs.cc/)
-
-![](res/14-02-06.png)
+- Growing library of UI goodies so you can focus on how-it-works
 
 ## Use
 
-Needs [node.js](http://nodejs.org/), [Bower](http://bower.io/) and [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli). (Bower *needs* [Git](http://git-scm.com/), and [Sass](http://sass-lang.com/) is, well, a Ruby Gem. Just saying.)
+Needs [node.js](http://nodejs.org/), [Bower](http://bower.io/) and [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli). Bower *needs* [Git](http://git-scm.com/) and [Sass](http://sass-lang.com/) needs [Ruby](https://www.ruby-lang.org/en/).
 
     $ git clone git@github.com:filtercake/tazz.git my_new_prototype
     $ cd my_new_prototype
