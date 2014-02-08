@@ -31,12 +31,15 @@ Sugar:
 
 ## Use
 
-Needs [node.js](http://nodejs.org/), [Bower](http://bower.io/) and [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli). Bower *needs* [Git](http://git-scm.com/) and [Sass](http://sass-lang.com/) needs [Ruby](https://www.ruby-lang.org/en/).
+Needs [node.js](http://nodejs.org/), [Bower](http://bower.io/) and [Grunt CLI](http://gruntjs.com/getting-started#installing-the-cli).
+
+[Sass](http://sass-lang.com/) needs [Ruby](https://www.ruby-lang.org/en/). node-sass with libsass exists, but they have no support for the indented syntax.
 
     $ git clone git@github.com:filtercake/tazz.git my_new_prototype
     $ cd my_new_prototype
     $ npm install
     $ bower install
+    $ bundle install # needed for Sass Gem
     $ grunt
 
 You should then be able to look at the compiled page at <http://localhost:3000/>.
