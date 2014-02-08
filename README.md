@@ -58,14 +58,6 @@ Your app should then be reachable at `your_github_username.github.io/my_new_prot
 
 See [the GitHub Pages documentation](http://pages.github.com/) for more info.
 
-### To 5Apps
-
-For a more feature rich deployment you should consider [5apps](https://5apps.com/deploy/home). 5Apps are comparable to what [Heroku](https://www.heroku.com/) or [Nodejitsu](https://www.nodejitsu.com/) do – but exclusively for frontend-only apps. Which is what the LEARN-stack is all about.
-
-First you need to create and configure an account at [5apps](https://5apps.com/deploy/home). They have a dedicated [Deployment Quick Start Guide](http://help.5apps.com/kb/deploy/quick-start-guide).
-
-And to make it all full circle they have also launched a [remoteStorage based Service](https://5apps.com/storage).
-
 ## Contribute
 
 All input on how stuff could be done better/easier/simpler is welcome, just dump an issue.
