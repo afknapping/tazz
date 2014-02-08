@@ -1,6 +1,6 @@
 # Tazz
 
-Deployable zero-configuration prototyping stack for designers.
+Deployable zero-configuration prototyping stack.
 
 ![](res/14-02-08.png)
 
@@ -11,7 +11,7 @@ Start protyping your app instantly with the L.E.A.R.N.™ Stack
 - [Local Storage](https://en.wikipedia.org/wiki/LocalStorage#localStorage)
 - Einhörner
 - [AngularJS](http://angularjs.org/)
-- [RemoteStorage](http://remotestorage.io/)
+- [RemoteStorage](http://remotestorage.io/)*
 - [Node](http://nodejs.org/)
 
 Supports by default
@@ -25,7 +25,7 @@ Sugar:
 - [LiveReload](http://livereload.com/)
 - Growing library of UI goodies so you can focus on how-it-works
 
-(Note: remoteStorage not yet implemented in Tazz, but will be "soon".)
+*(Note: remoteStorage not yet implemented in Tazz, but will be "soon".)
 
 ## Use
 
