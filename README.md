@@ -4,6 +4,8 @@ Deployable zero-configuration prototyping stack.
 
 ![](res/14-02-08.png)
 
+See this live at [filtercake.com/tazz-deploy-test/](http://filtercake.com/tazz-deploy-test/).
+
 ## Features
 
 Start protyping your app instantly with the L.E.A.R.N.™ Stack
