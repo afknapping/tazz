@@ -1,9 +1,0 @@
-{
-  "templating": "jade",
-  // jade, html
-  "styling": "sass",
-  // sass, css
-  "scripting": "js"
-  // coffee, js
-  
-}
