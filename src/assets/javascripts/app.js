@@ -1,9 +1,7 @@
 
-
-
 var tazz = angular.module('tazz', ['angularLocalStorage', 'ngAnimate']);
- 
-tazz.controller('TazzCtrl', function ($scope, $http, storage) {
+
+tazz.controller('AppCtrl', function ($scope, $http, storage) { 
 
   $scope.data = {};
   $scope.getAppData = function() {
@@ -26,7 +24,21 @@ tazz.controller('TazzCtrl', function ($scope, $http, storage) {
     $scope.data.myFavouriteThings.splice(thing, 1);
   };
 
-  $scope.world = 'Tazz';
+})
+
+.directive('app', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      templateUrl: 'app.html'
+    };
+})
+
+
+
+
+tazz.controller('TazzCtrl', function ($scope, $http, storage) {
+
   $scope.getTazzLibrary = function() {
     $http.get('data/tazz.json')
       .then(function(res){
@@ -42,13 +54,5 @@ tazz.controller('TazzCtrl', function ($scope, $http, storage) {
       restrict: 'E',
       replace: true,
       templateUrl: 'templates/lib.html'
-    };
-})
-
-.directive('app', function() {
-    return {
-      restrict: 'E',
-      replace: true,
-      templateUrl: 'app.html'
     };
 })

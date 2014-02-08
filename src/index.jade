@@ -11,21 +11,23 @@ head
   script(src="index.js")
   script(src="app.js")
 
-body(ng-controller="TazzCtrl")
-  app
+body
+  app(ng-controller="AppCtrl")
 
-  //- this rest should go in a tazz.html
-  .tazz-footer(ng-model="tazz")
-    a.btn(ng-click="getAppData()")
-      | Reload data.json
-    a.btn(ng-click="tazz.uiState.isOpen = !tazz.uiState.isOpen")
-      span(ng-if="!tazz.uiState.isOpen")
-        | Show library
-      span(ng-if="tazz.uiState.isOpen")
-        | Hide library
-    a(ng-click="getTazzLibrary()")
-      | Reload tazz.json
+  .tazz(ng-controller="TazzCtrl")
 
-    lib(ng-show="tazz.uiState.isOpen")
+    //- this rest should go in a tazz.html
+    .tazz-footer(ng-model="tazz")
+      a.btn(ng-click="getAppData()")
+        | Reload data.json
+      a.btn(ng-click="tazz.uiState.isOpen = !tazz.uiState.isOpen")
+        span(ng-if="!tazz.uiState.isOpen")
+          | Show library
+        span(ng-if="tazz.uiState.isOpen")
+          | Hide library
+      a(ng-click="getTazzLibrary()")
+        | Reload tazz.json
+
+      lib(ng-show="tazz.uiState.isOpen")
 
     script(src="//localhost:35729/livereload.js")

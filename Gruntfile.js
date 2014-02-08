@@ -4,42 +4,6 @@ module.exports = function(grunt){
     pkg: grunt.file.readJSON('package.json'),
 
 
-
-// NEW ORDER (haha)
-
-// - copy:
-  // - if index.html
-  // - if templates/.html
-  // - assets
-    // - if css
-    // - if js
-    // - if images
-    // - if fonts
-
-// - compile:
-  // - jade
-  // - sass
-  // - coffee
-
-// - hint/lint
-// - init (copy, compile, hint/lint, reload)
-// - connect:server
-
-// - watch
-  // - index.jade, templates/.jade
-  // - sass
-  // - coffee
-  // - if index.html
-  // - if templates/.html
-  // - css
-  // - js
-  // - images
-
-// - concurrent
-  // - watch_and_serve
-
-
-
     // COMPILE TASKS
     coffee: {
       glob_to_multiple: {
@@ -82,6 +46,16 @@ module.exports = function(grunt){
         } ]
       }
     },
+    // CONCAT into index.js
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: ['src/assets/javascripts/app.js', 'src/assets/javascripts/app.js'],
+        dest: 'build/index.js',
+      },
+    },
 
     // COPY TASKS
     copy: {
@@ -98,15 +72,6 @@ module.exports = function(grunt){
         cwd: 'bower_components',
         dest: 'build/bower_components',
         src: '**/*',
-      },
-
-      js: {
-        expand: true,
-        cwd: 'src/assets/javascripts',
-        src: '**/*.js',
-        dest: 'build/',
-        flatten: true,
-        filter: 'isFile',
       },
 
       html: {
@@ -143,7 +108,7 @@ module.exports = function(grunt){
       },
       js: {
         files: [ 'src/**/*.js'],
-        tasks: ['copy:js'],
+        tasks: ['concat:dist'],
       },
 
       jade: {
@@ -208,7 +173,7 @@ module.exports = function(grunt){
   grunt.registerTask('log', 'Log some stuff.', function () {
     grunt.log.write('Logging some stuff...').ok();
   });
-  grunt.registerTask('inital_compile', [ 'sass', 'jade', 'coffee', 'copy' ]);
+  grunt.registerTask('inital_compile', [ 'sass', 'jade', 'coffee', 'concat', 'copy' ]);
   grunt.registerTask('server', [ 'connect:server:keepalive' ]);
   grunt.registerTask('default', [ 'copy', 'inital_compile', 'concurrent:watch_serve_reload' ]);
   
@@ -221,4 +186,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 };
