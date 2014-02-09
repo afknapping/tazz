@@ -5,11 +5,11 @@ module.exports = function(grunt){
 
 
     // COMPILE TASKS
-    coffee: {
+    coffee: { 
       glob_to_multiple: {
         expand: true,
         flatten: true,
-        cwd: 'src/assets/javascripts',
+        cwd: 'src/js',
         src: ['**/*.coffee'],
         dest: 'build',
         ext: '.js',
@@ -23,7 +23,7 @@ module.exports = function(grunt){
         },
         files: [{
           expand: true,
-          cwd: 'src/assets/stylesheets',
+          cwd: 'src/styles',
           src: ['*.sass'],
           dest: 'build',
           ext: '.css'
@@ -52,7 +52,7 @@ module.exports = function(grunt){
         separator: ';',
       },
       dist: {
-        src: ['src/assets/javascripts/app.js', 'src/assets/javascripts/app.js'],
+        src: ['src/app.js', 'src/js/tazz.js'],
         dest: 'build/index.js',
       },
     },
@@ -85,7 +85,7 @@ module.exports = function(grunt){
 
       css: {
         expand: true,
-        cwd: 'src/assets/stylesheets/',
+        cwd: 'src/styles/',
         src: '**/*.css',
         dest: 'build/',
         flatten: true,

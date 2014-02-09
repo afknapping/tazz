@@ -1,4 +1,4 @@
-.app(ng-model="data")
+.app(ng-controller="AppCtrl")
   h1.
     Welcome to your app.
   .raw-data(ng-if="data")
@@ -42,5 +42,8 @@
           span
             {{ thing }}
 
+  hr
+  a.btn(ng-click="getAppData()")
+    | Reload data.json
 
 
