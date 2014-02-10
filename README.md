@@ -8,15 +8,12 @@ See this live at [filtercake.com/tazz-deploy-test/](http://filtercake.com/tazz-d
 
 ## Features
 
-Start protyping your app instantly with the L.E.A.R.N.™ Stack
+- Instant prototyping win with [AngularJS](http://angularjs.org/)
+- No database, just [Local Storage](https://en.wikipedia.org/wiki/LocalStorage#localStorage)
+- Can thus be deployed like any static website
+- no minifying, compressing or similar optimization
 
-- [Local Storage](https://en.wikipedia.org/wiki/LocalStorage#localStorage)
-- Einhörner
-- [AngularJS](http://angularjs.org/)
-- [RemoteStorage](http://remotestorage.io/)*
-- [Node](http://nodejs.org/)
-
-Supports by default
+Supports by default:
 
 - [Sass](http://sass-lang.com/)
 - [Jade](http://jade-lang.com/)
@@ -26,8 +23,6 @@ Supports by default
 Sugar:
 - [LiveReload](http://livereload.com/)
 - Growing library of UI goodies so you can focus on how-it-works
-
-*(Note: remoteStorage not yet implemented in Tazz, but will be "soon".)
 
 ## Use
 
