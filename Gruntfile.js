@@ -142,6 +142,13 @@ module.exports = function(grunt){
       },
     },
 
+    sass_to_scss: {
+      options: {},
+      files: {
+        'src/styles/_app.scss': ['src/styles/_app.sass', 'src/dfdf.sass'],
+      },
+    },
+
 
 
   //   jshint: {
@@ -187,4 +194,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-sass-to-scss');
 };
