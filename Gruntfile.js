@@ -130,7 +130,6 @@ module.exports = function(grunt){
       },
       watch_build: {
         files: [
-          'build/*.css',
           'build/*.html',
           'build/*.js',
           'build/assets/**',
@@ -138,7 +137,13 @@ module.exports = function(grunt){
         options: {
           livereload: true,  
         },
-
+      },
+      watch_build_css: {
+        files: ['build/*.css']
+      },
+      livereload: {
+        files: ['build/*.css'],
+        options: { livereload: true }
       },
     },
 
