@@ -2,7 +2,7 @@
 
 Deployable zero-configuration prototyping stack.
 
-![](res/14-02-08.png)
+![](res/14-02-10.png)
 
 See this live at [filtercake.com/tazz-deploy-test/](http://filtercake.com/tazz-deploy-test/).
 
