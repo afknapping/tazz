@@ -39,6 +39,23 @@ Needs [node.js](http://nodejs.org/), [Bower](http://bower.io/) and [Grunt CLI](h
 
 You should then be able to look at the compiled page at <http://localhost:3000/>.
 
+## Structure
+
+The idea is that the build consists of three main files:
+    index.html
+    index.js
+    index.css
+
+Since the html is controlled by the app, we do not need to render partials within Jade (which wouldn't be possible in html anyways.) Instead we define directives, each with its own html template. We can then use those like custom elements in the markup.
+
+Grunt concats `app.js` and any other file in `js/` into `index.js`. This is quick and dirty, so we do not need to set up something like require.js or the like.
+
+Finally, `index.sass` imports different partials.
+
+Keep your index files clean to stay sane.
+
+Happy hacking <3
+
 ## Deploy
 
 ### To Github Pages
