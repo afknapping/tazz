@@ -5,14 +5,17 @@ head
   title
   link(href="index.css" rel="stylesheet" type="text/css")
 
+  //- libraries are installed via bower and simply included piece by piece here. we could also use require.js, but this is far simpler and doesn't need any setup
   script(src="bower_components/angular/angular.js")
   script(src="bower_components/angular-cookies/angular-cookies.js")
   script(src="bower_components/angularLocalStorage/src/angularLocalStorage.js")
   script(src="bower_components/angular-animate/angular-animate.min.js")
 
+  //- app.js plus any other file from the js/ folder are concated into index.js. again, this spares setting up module loading
   script(src="index.js")
 
 body
+  //- we defined two directives with templates in app.js and js/tazz.js
   app
   tazz
 
