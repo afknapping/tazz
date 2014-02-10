@@ -1,4 +1,6 @@
 
+
+
 var tazz = angular.module('tazz', ['angularLocalStorage', 'ngAnimate']);
 
 tazz.controller('AppCtrl', function ($scope, $http, storage) { 
@@ -10,6 +12,12 @@ tazz.controller('AppCtrl', function ($scope, $http, storage) {
         $scope.data = res.data;
         console.log('yo');
       });
+  };
+
+  $scope.downladAppData = function (){
+    dataString = JSON.stringify($scope.data);
+    uriContent = "data:application/octet-stream," + encodeURIComponent(dataString);
+    location.href = uriContent;
   };
 
   storage.bind($scope,'data');
