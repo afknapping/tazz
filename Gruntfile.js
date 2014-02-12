@@ -171,6 +171,28 @@ module.exports = function(grunt){
             }
     },
 
+    // Grunt Icon: 
+
+    grunticon: {
+      myIcons: {
+              files: [{
+                  expand: true,
+                  cwd: 'icons',
+                  src: ['*.svg', '*.png'],
+                  dest: "src/styles/library/icons"
+              }],
+          options: {
+            datasvgcss: '_icons-data-svg.scss',
+            datapngcss: '_icons-data-png.scss',
+            urlpngcss: 'icons-fallback.css',
+            cssprefix: '%icon-',
+            defaultWidth: '128px',
+            defaultHeight: '128px',
+        }
+      }
+    },
+
+
 
 
   });
@@ -192,4 +214,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-grunticon');
 };
