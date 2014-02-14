@@ -18,7 +18,10 @@
     "tiny-lr": "~0.0.5",
     "markdown-js": "0.0.3",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-grunticon": "~1.0.0"
+    "grunt-grunticon": "~1.0.0",
+    "icomoon-phantomjs": "~0.2.7",
+    "grunt-fontsmith": "~0.4.0"
   },
-  "dependencies": {}
+  "dependencies": {
+  }
 }

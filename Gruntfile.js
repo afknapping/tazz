@@ -179,7 +179,7 @@ module.exports = function(grunt){
                   expand: true,
                   cwd: 'icons',
                   src: ['*.svg', '*.png'],
-                  dest: "src/styles/library/icons"
+                  dest: 'src/styles/library/icons'
               }],
           options: {
             datasvgcss: '_icons-data-svg.scss',
@@ -192,6 +192,62 @@ module.exports = function(grunt){
       }
     },
 
+    // ICON FONT
+
+    font: {
+      all: {
+        // SVG files to reed in
+        src: ['icons/*.svg'],
+
+        // Location to output CSS variables
+        destCss: 'src/styles/library/icons/fontsmith.scss',
+
+        // Location to output fonts (expanded via brace expansion)
+        destFonts: 'build/assets/fonts/icons.{svg,woff,eot,ttf}',
+
+        // Multiple CSS outputs supported (generated .styl and .json files)
+        // destCss: 'actual_files/font.{styl,json}',
+
+        // Alternative formats (1)
+        // destCss:[
+        //   'actual_files/font.styl',
+        //   'actual_files/font.json'
+        // ],
+        // destFonts: [
+        //   'actual_files/font.svg',
+        //   'actual_files/font.woff',
+        //   'actual_files/font.eot'
+        // ],
+
+        // // Alternative formats (2)
+        // destFonts: {
+        //   // Override specific engines
+        //   json: 'actual_files/font.less',
+        //   styl: 'actual_files/font.json'
+        // },
+        // destFonts: {
+        //   // Override specific engines
+        //   'dev-svg': 'actual_files/font.svg',
+        //   woff: 'actual_files/font.waffles',
+        //   eot: 'actual_files/more.like.eof'
+        // },
+
+        // OPTIONAL: Specify CSS format (inferred from destCss' extension by default)
+            // (stylus, less, scss, json)
+        // cssFormat: 'json',
+
+        // Optional: Custom routing of font filepaths for CSS
+        // cssRouter: function (fontpath) {
+        //   return 'mysubfolder/' + fontpath;
+        // },
+
+        // // Optional: Custom naming of font families for multi-task support
+        // fontFamily: 'my-icon-font',
+
+        // // OPTIONAL: Specify CSS options
+        // cssOptions: {}
+      }
+    },
 
 
 
@@ -215,4 +271,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-grunticon');
+  grunt.loadNpmTasks('grunt-fontsmith');
 };
