@@ -28,6 +28,27 @@
 
       Following are some basic styles so you can make your thing look not sucky. Everything is available as mixins, which are fast to write. Again, see the .sass files to see how they are built.
 
+      ### Icons
+
+      Instead of providing tons of icons, it is very easy to add your icons in SVG format:
+
+      - find desired icon at [The Noun Project](http://thenounproject.com/) and download
+      - rename svg file to `my_new_icon.svg` ("icon_33753" is not really helping)
+      - throw file into the `icons` folder
+      - a watch task calls Grunticon which converts it into data-uri extend
+      - you can now use `@extend %my_new_icon` in your Sass
+
+      *Example:* In the `icons` folder is a file calles `bee.svg`, so you can use the extend `%icon-bee` like this:
+
+          .icon-example
+            @extend %icon-bee
+
+      Output (more or less – see the Sass library file):
+
+    .icon-example
+
+    :markdown
+
       ### Colors
 
     span.mrsmr-colors(ng-repeat="color in tazz.colors" ng-class="'{{ color }}'")
