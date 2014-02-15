@@ -32,10 +32,10 @@ tazz.controller('AppCtrl', function ($scope, $http, storage) {
   storage.bind($scope,'data');
 
   // functions to add and delete things to list
-  $scope.data.addNewThing = function(newThing) {
+  $scope.addNewThing = function(newThing) {
     $scope.data.myFavouriteThings.push(newThing);
   };
-  $scope.data.deleteThing = function(thing) {
+  $scope.deleteThing = function(thing) {
     $scope.data.myFavouriteThings.splice(thing, 1);
   };
 

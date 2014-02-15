@@ -31,13 +31,13 @@
       | Add some things:
     p
       input.new-thing(ng-model="newThing" value="{{ newThing }}")
-      button.btn.add-new-thing(ng-click="data.addNewThing(newThing)" ng-if="newThing")
+      button.btn.add-new-thing(ng-click="addNewThing(newThing)" ng-if="newThing")
         | Add "{{ newThing }}"
     h3
       | Delete them:
     ul
       li.thing(ng-repeat="thing in data.myFavouriteThings track by $index")
-        button.delete-thing(ng-click="data.deleteThing($index)")
+        button.delete-thing(ng-click="deleteThing($index)")
           | X
         span
           | {{ thing }}

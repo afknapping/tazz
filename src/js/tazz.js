@@ -8,7 +8,7 @@ tazz.controller('TazzCtrl', function ($scope, $http, storage) {
       });
   };
 
-  storage.bind($scope,'tazz');
+  // storage.bind($scope,'tazz');
 })
 
 .directive('tazz', function() {
