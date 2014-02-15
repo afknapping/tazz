@@ -4,9 +4,10 @@ tazz.controller('TazzCtrl', function ($scope, $http, storage) {
     $http.get('data/tazz.json')
       .then(function(res){
         $scope.tazz = res.data;
-        console.log('yo');
+        console.log($scope.tazz);
       });
   };
+
   storage.bind($scope,'tazz');
 })
 

@@ -1,4 +1,4 @@
-.tazz(ng-controller="TazzCtrl")
+.tazz(ng-controller="TazzCtrl" ng-init="getTazzLibrary()")
   .tazz-footer
     a.btn(ng-click="tazz.uiState.isOpen = !tazz.uiState.isOpen")
       span(ng-if="!tazz.uiState.isOpen")
@@ -30,24 +30,19 @@
 
       ### Icons
 
-      Instead of providing tons of icons, it is very easy to add your icons in SVG format:
+      Icons are delivered via [Font Awesome](http://fontawesome.io/). [Avoid writing the classes directly into your markup](http://filtercake.com/stop-embedding-bootstrap-classes/) and use as follows:
 
-      - find desired icon at [The Noun Project](http://thenounproject.com/) and download
-      - rename svg file to `my_new_icon.svg` ("icon_33753" is not really helping)
-      - throw file into the `icons` folder
-      - a watch task calls Grunticon which converts it into data-uri extend
-      - you can now use `@extend %my_new_icon` in your Sass
+          .font-awesome-example
+            @extend %icon-100
+            @extend .fa-bullhorn
 
-      *Example:* In the `icons` folder is a file calles `bee.svg`, so you can use the extend `%icon-bee` like this:
+      Output:
 
-          .icon-example
-            @extend %icon-bee
-
-      Output (more or less – see the Sass library file):
-
-    .icon-example
+    .font-awesome-example
 
     :markdown
+
+
 
       ### Colors
 
@@ -56,20 +51,6 @@
 
     :markdown
       You can use these [colors](http://clrs.cc/) as mixins like `+olive` or `+fuchsia`. They define background, text and border colors.
-
-      ### Basic margins and paddings
-
-      ### Shape
-
-      - rounded corners
-      - circles
-
-      ### Effects
-
-      - text-shadow
-      - box-shadow
-      - lite emboss
-      - lite background noise
 
       ### Transitions
 
@@ -92,14 +73,26 @@
               background-color: yellow
 
 
+    //- ### Shape
 
-      ### Standard UI Elements
+    //- - rounded corners
+    //- - circles
 
-      - Buttons
-      - Forms
-      - Checkboxes
-      - Dropdowns
+    //- ### Effects
 
-      ### Markdown Elements
+    //- - text-shadow
+    //- - box-shadow
+    //- - lite emboss
+    //- - lite background noise
 
-      - H1 - H6, p, pre/code, img, ul, ol, hr
+
+    //- ### Standard UI Elements
+
+    //- - Buttons
+    //- - Forms
+    //- - Checkboxes
+    //- - Dropdowns
+
+    //- ### Markdown Elements
+
+    //- - H1 - H6, p, pre/code, img, ul, ol, hr

@@ -66,6 +66,21 @@ module.exports = function(grunt){
         dest: 'build/data/'
       },
 
+      font_awesome_scss: {
+        // needs to be copied into src/styles because paths
+        expand: true,
+        cwd: 'bower_components/font-awesome/scss',
+        src: '*.scss',
+        dest: 'src/styles/library/font-awesome'
+      },
+      font_awesome_fonts: {
+        // needs to be copied into src/styles because paths
+        expand: true,
+        cwd: 'bower_components/font-awesome/fonts',
+        src: '*.*',
+        dest: 'build/assets/fonts/font-awesome'
+      },
+
       bower_components: {
       // bower components need to be available 
         expand: true,
@@ -202,7 +217,7 @@ module.exports = function(grunt){
   });
   grunt.registerTask('inital_compile', [ 'sass', 'jade', 'coffee', 'concat', 'copy' ]);
   grunt.registerTask('server', [ 'connect:server:keepalive' ]);
-  grunt.registerTask('default', [ 'copy', 'inital_compile', 'concurrent:watch_serve_reload' ]);
+  grunt.registerTask('default', [ 'inital_compile', 'concurrent:watch_serve_reload' ]);
   
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
