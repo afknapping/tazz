@@ -1,0 +1,9 @@
+{
+  "watch_serve_reload": [
+    "server",
+    "watch"
+  ],
+  "options": {
+    "logConcurrentOutput": true
+  }
+}

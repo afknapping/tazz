@@ -1,0 +1,75 @@
+{
+  "html": {
+    "files": [
+      "src/**/*.html"
+    ],
+    "tasks": [
+      "copy:html"
+    ]
+  },
+  "css": {
+    "files": [
+      "src/**/*.css"
+    ],
+    "tasks": [
+      "copy:css"
+    ]
+  },
+  "js": {
+    "files": [
+      "src/**/*.js"
+    ],
+    "tasks": [
+      "concat:dist"
+    ]
+  },
+  "jade": {
+    "files": [
+      "src/**/*.jade"
+    ],
+    "tasks": [
+      "jade"
+    ]
+  },
+  "coffee": {
+    "files": [
+      "src/**/*.coffee"
+    ],
+    "tasks": [
+      "coffee"
+    ]
+  },
+  "sass": {
+    "files": "src/**/*.sass",
+    "tasks": [
+      "sass"
+    ]
+  },
+  "data": {
+    "files": "data/**/*.*",
+    "tasks": "copy:data"
+  },
+  "watch_build": {
+    "files": [
+      "build/*.html",
+      "build/*.js",
+      "build/assets/**"
+    ],
+    "options": {
+      "livereload": true
+    }
+  },
+  "watch_build_css": {
+    "files": [
+      "build/*.css"
+    ]
+  },
+  "livereload": {
+    "files": [
+      "build/*.css"
+    ],
+    "options": {
+      "livereload": true
+    }
+  }
+}

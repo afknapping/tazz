@@ -1,0 +1,12 @@
+{
+  "options": {
+    "separator": ";"
+  },
+  "dist": {
+    "src": [
+      "src/app.js",
+      "src/js/tazz.js"
+    ],
+    "dest": "build/index.js"
+  }
+}

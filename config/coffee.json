@@ -1,0 +1,12 @@
+{
+  "glob_to_multiple": {
+    "expand": true,
+    "flatten": true,
+    "cwd": "src/js",
+    "src": [
+      "**/*.coffee"
+    ],
+    "dest": "build",
+    "ext": ".js"
+  }
+}

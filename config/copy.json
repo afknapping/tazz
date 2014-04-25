@@ -1,0 +1,42 @@
+{
+  "data": {
+    "expand": true,
+    "cwd": "data",
+    "src": "**/*.json",
+    "dest": "build/data/"
+  },
+  "font_awesome_scss": {
+    "expand": true,
+    "cwd": "bower_components/font-awesome/scss",
+    "src": "*.scss",
+    "dest": "src/styles/library/font-awesome"
+  },
+  "font_awesome_fonts": {
+    "expand": true,
+    "cwd": "bower_components/font-awesome/fonts",
+    "src": "*.*",
+    "dest": "build/assets/fonts/font-awesome"
+  },
+  "bower_components": {
+    "expand": true,
+    "cwd": "bower_components",
+    "dest": "build/bower_components",
+    "src": "**/*"
+  },
+  "html": {
+    "expand": true,
+    "cwd": "src/",
+    "src": "**/*.html",
+    "dest": "build/",
+    "flatten": true,
+    "filter": "isFile"
+  },
+  "css": {
+    "expand": true,
+    "cwd": "src/styles/",
+    "src": "**/*.css",
+    "dest": "build/",
+    "flatten": true,
+    "filter": "isFile"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "compile": {
+    "options": {
+      "data": {
+        "debug": false
+      }
+    },
+    "files": [
+      {
+        "cwd": "src",
+        "dest": "build",
+        "expand": true,
+        "src": "**/*.jade",
+        "ext": ".html"
+      }
+    ]
+  }
+}

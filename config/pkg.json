@@ -19,7 +19,7 @@
     "markdown-js": "0.0.3",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-grunticon": "~1.0.0",
-    "load-grunt-configs": "~0.4.0"
+    "grunt-generate-configs": "~0.5.2"
   },
   "dependencies": {}
 }

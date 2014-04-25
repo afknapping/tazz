@@ -1,0 +1,19 @@
+{
+  "dist": {
+    "options": {
+      "style": "expanded",
+      "lineNumbers": true
+    },
+    "files": [
+      {
+        "expand": true,
+        "cwd": "src/styles",
+        "src": [
+          "*.sass"
+        ],
+        "dest": "build",
+        "ext": ".css"
+      }
+    ]
+  }
+}
